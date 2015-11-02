@@ -1,0 +1,134 @@
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\TestMVC001.dll.config
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\TestMVC001.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\TestMVC001.pdb
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Antlr3.Runtime.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\EntityFramework.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\EntityFramework.SqlServer.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.Web.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.WindowsServer.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.ApplicationInsights.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Google.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Web.Infrastructure.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Newtonsoft.Json.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Owin.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Helpers.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Mvc.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Optimization.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Razor.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.WebPages.Deployment.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.WebPages.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.WebPages.Razor.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\WebGrease.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.Web.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AI.WindowsServer.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.ApplicationInsights.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Helpers.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Mvc.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Optimization.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.Razor.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.WebPages.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.WebPages.Deployment.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\System.Web.WebPages.Razor.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Antlr3.Runtime.pdb
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Newtonsoft.Json.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\EntityFramework.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\EntityFramework.SqlServer.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Google.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\obj\Release\TestMVC001.csprojResolveAssemblyReference.cache
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\obj\Release\TestMVC001.dll
+c:\users\kri0054\documents\visual studio 2013\Projects\TestMVC001\TestMVC001\obj\Release\TestMVC001.pdb
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\TestMVC001.dll.config
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\TestMVC001.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\TestMVC001.pdb
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Antlr3.Runtime.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.SqlServer.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.Agent.Intercept.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.DependencyCollector.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.Web.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.WindowsServer.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.ApplicationInsights.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Core.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Cookies.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Facebook.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Google.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.OAuth.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Twitter.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Web.Infrastructure.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Newtonsoft.Json.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Owin.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Helpers.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Mvc.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Optimization.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Razor.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.WebPages.Deployment.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.WebPages.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.WebPages.Razor.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\WebGrease.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.DependencyCollector.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.Web.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.WindowsServer.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.ApplicationInsights.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Helpers.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Mvc.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Optimization.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.Razor.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.WebPages.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.WebPages.Deployment.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.WebPages.Razor.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Antlr3.Runtime.pdb
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Newtonsoft.Json.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.SqlServer.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Core.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Facebook.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Cookies.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.OAuth.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Google.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.Twitter.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\obj\Release\TestMVC001.csprojResolveAssemblyReference.cache
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\obj\Release\TestMVC001.dll
+C:\School\Project\Application\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\obj\Release\TestMVC001.pdb
