@@ -59,6 +59,7 @@ namespace TestMVC001.Controllers
                             cmd1.Parameters.AddWithValue("@rfid", rfId);
                             cmd1.Parameters.AddWithValue("@machineId", machineId);
                             cmd1.Parameters.AddWithValue("@orgId", orgId);
+                            cmd1.Parameters.AddWithValue("@tot", tot);
                             cmd1.Parameters.Add("@phoneNumber", SqlDbType.Float);
                             cmd1.Parameters["@phoneNumber"].Direction = ParameterDirection.Output;
                             cmd1.Parameters.Add("@studentName", SqlDbType.VarChar, 765);
