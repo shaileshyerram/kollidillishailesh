@@ -18,85 +18,75 @@ namespace TestMVC001.Controllers
         public ActionResult Index()
         {
             string[] querystring = new string[20];
-            for (int i = 0; i < Request.QueryString.Count; i++)
+            string orgId = "";
+            string machineId = "";
+            string rfId;
+            int rfidInt; // rfid in integer format
+            string attendanceDateTime; //Time Of Attendance
+            if (Request.QueryString.Count > 0)
             {
-                string Qstr = Request.QueryString[i].ToString();
+                string Qstr = Request.QueryString[0].ToString();
                 querystring = Qstr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-            }
-            if (querystring[2] != null)
-            {
-                string orgId = "";
-                string machineId = "";
-                string rfId;
-                int rfidInt; // rfid in integer format
-                string tot; //Time Of Attendance
                 orgId = RemoveSpecialChars(querystring[0]);  //Removing special charecters Like * ,$ form Organization Id
                 machineId = querystring[1];
-                // TODO ==> fix RFID datatype in database.10 digits.
-                // TODO ==> Make sure RFID is assigned to every student during registration. registration page of UI.
-                rfId = querystring[2];
-                Console.WriteLine("raw rfid before conversion "+rfId);
-                rfidInt = int.Parse(rfId);
-                Console.WriteLine("numeric rfid after conversion " + rfidInt);
-
-                tot = RemoveSpecialChars(querystring[3]);
-                if (tot != null && machineId != "" && rfId.Length <= 16 && rfId.Length > 0)
+                rfId = querystring[2].Trim();
+                attendanceDateTime = RemoveSpecialChars(querystring[3]);
+                if (!String.IsNullOrEmpty(orgId) && !String.IsNullOrEmpty(machineId) && !String.IsNullOrEmpty(rfId) && rfId.Length > 0 && rfId.Length <= 16
+                     && !String.IsNullOrEmpty(attendanceDateTime) && attendanceDateTime.Length == 14)
                 {
-                    if (tot.Length == 14)
+                    rfidInt = int.Parse(rfId);                    
+                    DateTime dateTime = DateTime.ParseExact(attendanceDateTime, "ddMMyyyyHHmmss", System.Globalization.CultureInfo.InvariantCulture);
+                    attendanceDateTime = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+                    using (SqlConnection con = new SqlConnection(ConnectionString))
                     {
-                        //Converting Value Into DateTime
-                        string format = "ddMMyyyyHHmmss";
-                        DateTime dateTime = DateTime.ParseExact(tot, format, System.Globalization.CultureInfo.InvariantCulture);
-                        tot = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                        //Insert student attendance record and get the student details to send the SMS
+                        con.Open();
+                        SqlCommand cmd1 = new SqlCommand("InsertStudentAttendance", con);
+                        cmd1.CommandType = CommandType.StoredProcedure;
+                        cmd1.Parameters.AddWithValue("@rfid", rfId);
+                        cmd1.Parameters.AddWithValue("@machineId", machineId);
+                        cmd1.Parameters.AddWithValue("@orgId", orgId);
+                        cmd1.Parameters.AddWithValue("@attendanceDateTime", attendanceDateTime);
+                        cmd1.Parameters.Add("@phoneNumber", SqlDbType.Float);
+                        cmd1.Parameters["@phoneNumber"].Direction = ParameterDirection.Output;
+                        cmd1.Parameters.Add("@studentName", SqlDbType.VarChar, 765);
+                        cmd1.Parameters["@studentName"].Direction = ParameterDirection.Output;
+                        SqlDataReader rdr = cmd1.ExecuteReader();
+                        con.Close();
+                            
+                        //Sending SMS using Bulk Service
+                        string baseUrl = "http://tra.bulksmshyderabad.co.in/websms/sendsms.aspx?userid=demosms&password=123456&sender=INTECH";
+                        string mobileNo = cmd1.Parameters["@PhoneNumber"].Value.ToString(); //"9966770761"  //9030644017;
+                        string studentName = cmd1.Parameters["@studentName"].Value.ToString();
+                        string smsUrl = String.Format("{0}&mobileno={1}&msg={2}&uname={3}", baseUrl, mobileNo, rfId, studentName);
+                        var client = new WebClient();
+                        var response = client.DownloadString(smsUrl);
 
-                        using (SqlConnection con = new SqlConnection(ConnectionString))
-                        {
-                            con.Open();
-                            //query To get the value from table tblregistration
-                            //string selectquery = "Select * from tblregistration where UserId='" + rfId + "' ";
-                            SqlCommand cmd1 = new SqlCommand("InsertStudentAttendance", con);
-                            cmd1.CommandType = CommandType.StoredProcedure;
-                            cmd1.Parameters.AddWithValue("@rfid", rfId);
-                            cmd1.Parameters.AddWithValue("@machineId", machineId);
-                            cmd1.Parameters.AddWithValue("@orgId", orgId);
-                            cmd1.Parameters.AddWithValue("@tot", tot);
-                            cmd1.Parameters.Add("@phoneNumber", SqlDbType.Float);
-                            cmd1.Parameters["@phoneNumber"].Direction = ParameterDirection.Output;
-                            cmd1.Parameters.Add("@studentName", SqlDbType.VarChar, 765);
-                            cmd1.Parameters["@studentName"].Direction = ParameterDirection.Output;
-                            SqlDataReader rdr = cmd1.ExecuteReader();
-                            con.Close();
+                        //Store the SMS result in database
+                        con.Open();
+                        SqlCommand cmnd2 = new SqlCommand("InsertSMSResponse", con);
+                        cmnd2.CommandType = CommandType.StoredProcedure;
+                        cmnd2.Parameters.AddWithValue("@smsUrl", smsUrl);
+                        cmnd2.Parameters.AddWithValue("@response", response);
+                        cmnd2.Parameters.AddWithValue("@status", response.Substring(0, response.IndexOf(':') - 1));
+                        cmnd2.ExecuteNonQuery();                                   
+                        con.Close();
 
-                            // TODO ==> Identify In and Out Timestamps. as of now,  morning 6 AM to 10 AM ==> IN Time , evening 3 to 6 ==>  OUT Time
-                            // TODO ==> think of correct data model to maintain this data
-
-                            //Sending SMS using Bulk Service
-                            string baseUrl = "http://tra.bulksmshyderabad.co.in/websms/sendsms.aspx?userid=demosms&password=123456&sender=INTECH";
-                            string mobileNo = cmd1.Parameters["@PhoneNumber"].Value.ToString(); //"9966770761"  //9030644017;
-                            string studentName = cmd1.Parameters["@studentName"].Value.ToString();
-                            string smsUrl = String.Format("{0}&mobileno={1}&msg={2}&uname={3}", baseUrl, mobileNo, rfId, studentName);
-                            var client = new WebClient();
-                            var response = client.DownloadString(smsUrl);
-
-                            //Store the SMS result in database
-                            con.Open();
-                            SqlCommand cmnd2 = new SqlCommand("InsertSMSResponse", con);
-                            cmnd2.CommandType = CommandType.StoredProcedure;
-                            cmnd2.Parameters.AddWithValue("@smsUrl", smsUrl);
-                            cmnd2.Parameters.AddWithValue("@response", response);
-                            cmnd2.Parameters.AddWithValue("@status", response.Substring(0, response.IndexOf(':') - 1));
-                            cmnd2.ExecuteNonQuery();                                   
-                            con.Close();
-                        }
+                        //query To get the value from table tblregistration
+                        //string selectquery = "Select * from tblregistration where UserId='" + rfId + "' ";
+                        // TODO ==> Identify In and Out Timestamps. as of now,  morning 6 AM to 10 AM ==> IN Time , evening 3 to 6 ==>  OUT Time
+                        // TODO ==> think of correct data model to maintain this data
+                        // TODO ==> fix RFID datatype in database.10 digits.
+                        // TODO ==> Make sure RFID is assigned to every student during registration. registration page of UI.
+                    }
+                    if (rfId != null)
+                    {
+                        //For Successfull Insertion Of Data Into database We are giving response To the device
+                        Response.Write("$RFID=0#");
                     }
                 }
-                if (rfId != null)
-                {
-                    //For Successfull Insertion Of Data Into database We are giving response To the device
-                    Response.Write("$RFID=0#");
-                }
             }
-
             return View();
         }
 
