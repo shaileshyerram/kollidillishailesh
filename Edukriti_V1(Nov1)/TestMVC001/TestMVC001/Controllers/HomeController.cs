@@ -18,10 +18,12 @@ namespace TestMVC001.Controllers
 
         public ActionResult Index()
         {
-            string[] querystring = new string[20]; //TODO check max how many sub-requests allowed in one request
+            //TODO check if request.queryString.count > 1 in any scenario
+            string[] querystring = new string[20]; //TODO check max how many sub-requests allowed in one request - change to list
             if (Request.QueryString.Count > 0)
             {
                 string Qstr = Request.QueryString[0].ToString();
+                //45610&99&0000009999&10092015114300,0000009999&11092015114800,0000009999&11092015114800
                 querystring = Qstr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 if (querystring.Length >= 4)
                 {
@@ -53,8 +55,8 @@ namespace TestMVC001.Controllers
                     foreach (var requestModel in requestModelList)
                     {
                         if (!String.IsNullOrEmpty(orgId) && !String.IsNullOrEmpty(machineId)
-                            && !String.IsNullOrEmpty(requestModel.rfId) && requestModel.rfId.Length > 0 && requestModel.rfId.Length <= 16  //TODO why
-                            && !String.IsNullOrEmpty(requestModel.dtAttendance))// && requestModel.dtAttendance.Length == 14)  //TODO why
+                            && !String.IsNullOrEmpty(requestModel.rfId) && requestModel.rfId.Length > 0 && requestModel.rfId.Length <= 16
+                            && !String.IsNullOrEmpty(requestModel.dtAttendance) && requestModel.dtAttendance.Length == 14)  
                         {
                             rfidInt = int.Parse(requestModel.rfId);
                             using (SqlConnection con = new SqlConnection(ConnectionString))
@@ -75,22 +77,26 @@ namespace TestMVC001.Controllers
                                 con.Close();
 
                                 //Sending SMS using Bulk Service
-                                string baseUrl = "http://tra.bulksmshyderabad.co.in/websms/sendsms.aspx?userid=demosms&password=123456&sender=INTECH";
                                 string mobileNo = cmd1.Parameters["@PhoneNumber"].Value.ToString(); //"9966770761"  //9030644017;
                                 string studentName = cmd1.Parameters["@studentName"].Value.ToString();
-                                string smsUrl = String.Format("{0}&mobileno={1}&msg={2}&uname={3}", baseUrl, mobileNo, requestModel.rfId, studentName);
-                                var client = new WebClient();
-                                var response = client.DownloadString(smsUrl);
+                                if (!String.IsNullOrEmpty(mobileNo))
+                                {
+                                    string baseUrl = "http://tra.bulksmshyderabad.co.in/websms/sendsms.aspx?userid=demosms&password=123456&sender=INTECH";
+                                    var msg = studentName + " has reached the campus at " + requestModel.dtAttendance;
+                                    string smsUrl = String.Format("{0}&mobileno={1}&msg={2}", baseUrl, mobileNo, msg);
+                                    var client = new WebClient();
+                                    var response = client.DownloadString(smsUrl);
 
-                                //Store the SMS result in database
-                                con.Open();
-                                SqlCommand cmnd2 = new SqlCommand("InsertSMSResponse", con);
-                                cmnd2.CommandType = CommandType.StoredProcedure;
-                                cmnd2.Parameters.AddWithValue("@smsUrl", smsUrl);
-                                cmnd2.Parameters.AddWithValue("@response", response);
-                                cmnd2.Parameters.AddWithValue("@status", response.Substring(0, response.IndexOf(':') - 1));
-                                cmnd2.ExecuteNonQuery();
-                                con.Close();
+                                    //Store the SMS result in the database
+                                    con.Open();
+                                    SqlCommand cmnd2 = new SqlCommand("InsertSMSResponse", con);
+                                    cmnd2.CommandType = CommandType.StoredProcedure;
+                                    cmnd2.Parameters.AddWithValue("@smsUrl", smsUrl);
+                                    cmnd2.Parameters.AddWithValue("@response", response);
+                                    cmnd2.Parameters.AddWithValue("@status", response.Substring(0, response.IndexOf(':') - 1));
+                                    cmnd2.ExecuteNonQuery();
+                                    con.Close();
+                                }
 
                                 //query To get the value from table tblregistration
                                 //string selectquery = "Select * from tblregistration where UserId='" + rfId + "' ";
