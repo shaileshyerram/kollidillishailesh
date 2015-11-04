@@ -56,7 +56,7 @@ namespace TestMVC001.Controllers
                     {
                         if (!String.IsNullOrEmpty(orgId) && !String.IsNullOrEmpty(machineId)
                             && !String.IsNullOrEmpty(requestModel.rfId) && requestModel.rfId.Length > 0 && requestModel.rfId.Length <= 16
-                            && !String.IsNullOrEmpty(requestModel.dtAttendance) && requestModel.dtAttendance.Length == 14)  
+                            && !String.IsNullOrEmpty(requestModel.dtAttendance))  
                         {
                             rfidInt = int.Parse(requestModel.rfId);
                             using (SqlConnection con = new SqlConnection(ConnectionString))
