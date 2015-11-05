@@ -65,6 +65,9 @@ namespace TestMVC001.Controllers
                                 cmd1.Parameters["@phoneNumber"].Direction = ParameterDirection.Output;
                                 cmd1.Parameters.Add("@studentName", SqlDbType.VarChar, 765);
                                 cmd1.Parameters["@studentName"].Direction = ParameterDirection.Output;
+                                cmd1.Parameters.Add("@isInTime", SqlDbType.Bit);
+                                cmd1.Parameters["@isInTime"].Direction = ParameterDirection.Output;
+                                
                                 cmd1.ExecuteReader();
                                 con.Close();
 
@@ -73,7 +76,9 @@ namespace TestMVC001.Controllers
                                 string studentName = cmd1.Parameters["@studentName"].Value.ToString();
                                 if (!String.IsNullOrEmpty(mobileNo))
                                 {
-                                    var msg = studentName + " has swiped at the campus at " + requestModel.dtAttendance;
+                                    bool isInTime = Convert.ToBoolean(cmd1.Parameters["@isInTime"].Value);
+                                    string subMsg = isInTime ? " has entered the campus at " : " has left the campus at ";
+                                    var msg = string.Format("{0}{1}{2}", studentName, subMsg, requestModel.dtAttendance);
                                     string smsUrl = String.Format("{0}&mobileno={1}&msg={2}", WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], mobileNo, msg);
                                     var client = new WebClient();
                                     var response = client.DownloadString(smsUrl);
