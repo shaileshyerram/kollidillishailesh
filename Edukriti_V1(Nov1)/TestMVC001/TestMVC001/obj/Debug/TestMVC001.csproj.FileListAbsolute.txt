@@ -199,3 +199,5 @@ C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\obj\Debug\TestMVC001.csprojResolveAssemblyReference.cache
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\obj\Debug\TestMVC001.dll
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\obj\Debug\TestMVC001.pdb
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\TestMVC001.Core.exe
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\TestMVC001.Core.pdb
