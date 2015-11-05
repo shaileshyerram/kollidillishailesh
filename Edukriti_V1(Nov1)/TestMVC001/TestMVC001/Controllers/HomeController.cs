@@ -31,14 +31,13 @@ namespace TestMVC001.Controllers
 
                         index++;
                         string dtAttendance = RemoveSpecialChars(qsParameters[index]);
-                        DateTime dateTime = DateTime.ParseExact(dtAttendance, "ddMMyyyyHHmmss", CultureInfo.InvariantCulture);
-                        dtAttendance = dateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                        DateTime dateTimeAttendance = DateTime.ParseExact(dtAttendance, "ddMMyyyyHHmmss", CultureInfo.InvariantCulture);
                         var requestModel = new RequestModel
                         {
                             orgId = orgId,
                             machineId = machineId,
                             rfId = rfId,
-                            dtAttendance = dtAttendance
+                            dtAttendance = dateTimeAttendance
                         };
                         requestModelList.Add(requestModel);
                     }
@@ -46,7 +45,7 @@ namespace TestMVC001.Controllers
                     {
                         if (!String.IsNullOrEmpty(orgId) && !String.IsNullOrEmpty(machineId)
                             && !String.IsNullOrEmpty(requestModel.rfId) && requestModel.rfId.Length > 0 && requestModel.rfId.Length <= 16
-                            && !String.IsNullOrEmpty(requestModel.dtAttendance))
+                            && requestModel.dtAttendance != null)
                         {
                             int rfidInt = int.Parse(requestModel.rfId);
                             string connectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
@@ -61,7 +60,7 @@ namespace TestMVC001.Controllers
                                 cmd1.Parameters.AddWithValue("@rfid", rfidInt);
                                 cmd1.Parameters.AddWithValue("@machineId", machineId);
                                 cmd1.Parameters.AddWithValue("@orgId", orgId);
-                                cmd1.Parameters.AddWithValue("@dtAttendance", requestModel.dtAttendance);
+                                cmd1.Parameters.AddWithValue("@attendanceDateTime", requestModel.dtAttendance);
                                 cmd1.Parameters.Add("@phoneNumber", SqlDbType.Float);
                                 cmd1.Parameters["@phoneNumber"].Direction = ParameterDirection.Output;
                                 cmd1.Parameters.Add("@studentName", SqlDbType.VarChar, 765);
@@ -149,5 +148,5 @@ public class RequestModel
     public string orgId;
     public string machineId;
     public string rfId;
-    public string dtAttendance;
+    public DateTime dtAttendance;
 }
