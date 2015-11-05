@@ -73,7 +73,7 @@ namespace TestMVC001.Controllers
                                 string studentName = cmd1.Parameters["@studentName"].Value.ToString();
                                 if (!String.IsNullOrEmpty(mobileNo))
                                 {
-                                    var msg = studentName + " has reached the campus at " + requestModel.dtAttendance;
+                                    var msg = studentName + " has swiped at the campus at " + requestModel.dtAttendance;
                                     string smsUrl = String.Format("{0}&mobileno={1}&msg={2}", WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], mobileNo, msg);
                                     var client = new WebClient();
                                     var response = client.DownloadString(smsUrl);
