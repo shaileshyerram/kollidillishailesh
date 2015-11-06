@@ -41,27 +41,27 @@ namespace TestMVC001.Controllers
                     }
                     foreach (var requestModel in requestModelList)
                     {
-                        if (!String.IsNullOrEmpty(orgId) && !String.IsNullOrEmpty(machineId)
+                        /*if (!String.IsNullOrEmpty(orgId) && !String.IsNullOrEmpty(machineId)
                             && requestModel.RfId != null && !String.IsNullOrEmpty(requestModel.RfId) && requestModel.RfId.Length > 0 && requestModel.RfId.Length <= 16
-                            && requestModel.DtAttendance != null)//TODO check default value of datetime.parseexact
-                        {
-                            //Insert student attendance record and get the student details to send the SMS
-                            var attendanceResponseModel = AttendanceService.InsertOrUpdateAttendanceRecord(requestModel);
+                            && requestModel.DtAttendance != null)//TODO check default value of datetime.parseexact*/
+                        
+                        //Insert student attendance record and get the student details to send the SMS
+                        var attendanceResponseModel = AttendanceService.InsertOrUpdateAttendanceRecord(requestModel);
                            
-                            //Sending SMS using Bulk Service
-                            if (!String.IsNullOrEmpty(attendanceResponseModel.PhoneNumber))
-                            {
-                                var smsResponseModel = SendSmsService.SendSms(attendanceResponseModel, requestModel.DtAttendance);
-                                AttendanceService.InsertSmsResponse(smsResponseModel);
-                            }
-
-                            //query To get the value from table tblregistration
-                            //string selectquery = "Select * from tblregistration where UserId='" + rfId + "' ";
-                            // TODO ==> Identify In and Out Timestamps. as of now,  morning 6 AM to 10 AM ==> IN Time , evening 3 to 6 ==>  OUT Time
-                            // TODO ==> think of correct data model to maintain this data
-                            // TODO ==> fix RFID datatype in database.10 digits.
-                            // TODO ==> Make sure RFID is assigned to every student during registration. registration page of UI.
+                        //Sending SMS using Bulk Service
+                        if (!String.IsNullOrEmpty(attendanceResponseModel.PhoneNumber))
+                        {
+                            var smsResponseModel = SendSmsService.SendSms(attendanceResponseModel, requestModel.DtAttendance);
+                            AttendanceService.InsertSmsResponse(smsResponseModel);
                         }
+
+                        //query To get the value from table tblregistration
+                        //string selectquery = "Select * from tblregistration where UserId='" + rfId + "' ";
+                        // TODO ==> Identify In and Out Timestamps. as of now,  morning 6 AM to 10 AM ==> IN Time , evening 3 to 6 ==>  OUT Time
+                        // TODO ==> think of correct data model to maintain this data
+                        // TODO ==> fix RFID datatype in database.10 digits.
+                        // TODO ==> Make sure RFID is assigned to every student during registration. registration page of UI.
+                        
                         if (requestModel.RfId != null)
                         {
                             //For Successfull Insertion Of Data Into database We are giving response To the device
