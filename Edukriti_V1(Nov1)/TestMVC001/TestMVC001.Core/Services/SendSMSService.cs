@@ -18,7 +18,8 @@ namespace TestMVC001.Core.Services
             string subMsg = responseModel.IsInTime ? " has entered the campus at " : " has left the campus at ";
             var msg = string.Format("{0}{1}{2}", responseModel.StudentName, subMsg, dtAttendance);
             string smsUrl = String.Format("{0}&mobileno={1}&msg={2}",
-                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], responseModel.PhoneNumber, msg);
+                //WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], responseModel.PhoneNumber, msg);
+                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], "9063713741", msg);
             var client = new WebClient();
             var response = client.DownloadString(smsUrl);
             return new SmsResponseModel
