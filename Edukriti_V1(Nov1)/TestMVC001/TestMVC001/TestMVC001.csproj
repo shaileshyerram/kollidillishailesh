@@ -185,6 +185,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MySqlConnection.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\UserReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,14 +200,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CommonStyles.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.15.0-build46802.js" />
     <Content Include="Scripts\ai.0.15.0-build46802.min.js" />
+    <Content Include="Scripts\Attendance\Report.js" />
     <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\edu-kriti.com - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\edu-kriti.com - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\edu-kriti.com - Web Deploy %282%29.pubxml" />
@@ -214,18 +216,31 @@
     <None Include="Properties\PublishProfiles\NextGenTech.pubxml" />
     <None Include="Properties\PublishProfiles\T.pubxml" />
     <None Include="Properties\PublishProfiles\TestMVC001.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\Bundles\jquery\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Bundles\bootstrap\bootstrap-collapse.js" />
+    <Content Include="Scripts\Bundles\bootstrap\bootstrap-datepicker.js" />
+    <Content Include="Scripts\Bundles\bootstrap\bootstrap-modal.js" />
+    <Content Include="Scripts\Bundles\bootstrap\bootstrap-popover.js" />
+    <Content Include="Scripts\Bundles\bootstrap\bootstrap-tab.js" />
+    <Content Include="Scripts\Bundles\bootstrap\bootstrap-tooltip.js" />
+    <Content Include="Scripts\Bundles\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Bundles\jQueryUI\jquery-ui.js" />
+    <Content Include="Scripts\Bundles\jQueryUI\jquery-ui.min.js" />
+    <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.js" />
+    <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.min.js" />
+    <None Include="Scripts\Bundles\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Bundles\jquery\jquery.validate.js" />
+    <Content Include="Scripts\Bundles\jquery\jquery.validate.min.js" />
+    <Content Include="Scripts\Bundles\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Bundles\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Report\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -242,7 +257,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
@@ -267,10 +281,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UserReport\Index.cshtml" />
+    <Content Include="Views\Shared\_GlobalLayout.cshtml" />
+    <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.min.map" />
+    <None Include="Views\Shared\_ReportDataPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Report\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -283,6 +299,7 @@
     <ProjectReference Include="..\TestMVC001.Core\TestMVC001.Core.csproj">
       <Project>{65CCF2F3-E464-4959-A6D9-3C9D5F6E549D}</Project>
       <Name>TestMVC001.Core</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

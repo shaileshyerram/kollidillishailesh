@@ -1,0 +1,32 @@
+﻿@using TestMVC001.Core.Models;
+@model TestMVC001.Core.Models.ReportResponseModel
+
+<h2>This is report data</h2>
+@if (Model.DataTable != null && Model.DataTable.Rows.Count > 0)
+{
+    <table>
+        <thead>
+        <tr>
+            @foreach (var column in Model.DataTable.Columns)
+            {
+                @*<td>@column</td>*@
+            }
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Model.DataTable.Rows)
+            {
+                <tr>
+                    @*@foreach (var dataCol in @row)
+                    {
+                        <td>@dataCol</td>
+                    }*@
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>There is no data for the selected criteria.</h3>
+}
