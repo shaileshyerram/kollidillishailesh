@@ -20,3 +20,5 @@ h3 { font-size: 30px;padding: 0 !important;line-height: 40px;}
 .reportDataTable >tbody >tr >td.Gender { text-align: left;padding-left: 20px;}
 /*Datepicker customize styles */
 .ui-state-disabled { background-color: white;}
+.show { display: block;}
+.hide { display: none;}

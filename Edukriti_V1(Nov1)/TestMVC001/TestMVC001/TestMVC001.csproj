@@ -235,6 +235,7 @@
     <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.js" />
     <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.min.js" />
     <None Include="Scripts\Bundles\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Bundles\jquery\jquery.table2excel.js" />
     <Content Include="Scripts\Bundles\jquery\jquery.validate.js" />
     <Content Include="Scripts\Bundles\jquery\jquery.validate.min.js" />
     <Content Include="Scripts\Bundles\jquery\jquery.validate.unobtrusive.js" />

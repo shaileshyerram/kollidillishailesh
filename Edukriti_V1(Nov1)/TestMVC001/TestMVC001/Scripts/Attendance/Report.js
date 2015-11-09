@@ -1,6 +1,13 @@
 ﻿
 $(document).ready(function () {
     var d = new Date();
+    $(".btnExport").click(function () {
+        $(".reportDataTable").table2excel({
+            exclude: ".noExl",
+            name: "AttendanceReport_"+d
+        });
+    });
+
     $("#fromDatepicker").datepicker({
         changeMonth: true,//this option for allowing user to select month
         changeYear: true, //this option for allowing user to select from year range
@@ -36,11 +43,13 @@ $(document).ready(function () {
             success: function (data) {
                 if (data && data.Rows && data.Rows.length > 0) {
                     var tab = $('<table class="reportDataTable" rules="all"></table>');
+                    
                     var thead = $('<thead></thead>');
-
+                    var tcrow = $('<tr></tr>');
                     $.each(data.Columns, function (i, cell) {
-                        thead.append('<th class="columnCell">' + cell + '</th>');
+                        tcrow.append('<th class="columnCell">' + cell + '</th>');
                     });
+                    thead.append(tcrow);
                     tab.append(thead);
                      $.each(data.Rows, function (j, row) {
                          var trow = $('<tr></tr>');
@@ -51,6 +60,7 @@ $(document).ready(function () {
                      });
                      $("tr:odd", tab).css('background-color', '#EAE9E9');
                      $(".reportData").empty().prepend(tab);
+                    $(".btnExport").show();
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
