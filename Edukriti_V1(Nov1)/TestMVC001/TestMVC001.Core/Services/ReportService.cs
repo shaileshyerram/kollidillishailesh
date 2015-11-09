@@ -24,8 +24,8 @@ namespace TestMVC001.Core.Services
                 sqlComm.Parameters.AddWithValue("@name", requestModel.Name);
                 sqlComm.Parameters.AddWithValue("@class", requestModel.StudentClass);
                 sqlComm.Parameters.AddWithValue("@section", requestModel.Section);
-                sqlComm.Parameters.AddWithValue("@fromDate", "09-17-2015");//requestModel.DtFrom);
-                sqlComm.Parameters.AddWithValue("@toDate", "11-04-2015");//requestModel.DtTo);
+                sqlComm.Parameters.AddWithValue("@fromDate", requestModel.DtFrom); //"09-17-2015");    
+                sqlComm.Parameters.AddWithValue("@toDate", requestModel.DtTo);  //"11-04-2015");
                 SqlDataAdapter da = new SqlDataAdapter {SelectCommand = sqlComm};
                 da.Fill(ds);
                 //sqlComm.ExecuteReader();

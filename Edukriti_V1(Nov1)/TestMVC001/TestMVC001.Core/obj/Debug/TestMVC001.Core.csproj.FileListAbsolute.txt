@@ -8,6 +8,5 @@ C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\TestMVC001.Core.pdb
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\Newtonsoft.Json.dll
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\Newtonsoft.Json.xml
-C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.csprojResolveAssemblyReference.cache
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.exe
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.pdb

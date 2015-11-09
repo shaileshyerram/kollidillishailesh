@@ -1,6 +1,18 @@
 ﻿
 $(document).ready(function () {
-    $(".datepicker").datepicker();
+    var d = new Date();
+    $("#fromDatepicker").datepicker({
+        changeMonth: true,//this option for allowing user to select month
+        changeYear: true, //this option for allowing user to select from year range
+        dateFormat: "dd-M-yy",
+        setDate: new Date(),
+        defaultDate: new Date()
+    });
+    $("#toDatepicker").datepicker({
+        changeMonth: true,//this option for allowing user to select month
+        changeYear: true, //this option for allowing user to select from year range
+        dateFormat: "dd-M-yy"
+    });
     $("#reset").on('click', function () {
         $('#reportForm')[0].reset.click();
         $(".reportData").empty();
@@ -33,7 +45,7 @@ $(document).ready(function () {
                      $.each(data.Rows, function (j, row) {
                          var trow = $('<tr></tr>');
                          $.each(row.RowCells, function (k, cell) {
-                             trow.append('<td class="rowCell">' + cell + '</td>');
+                            trow.append('<td class="rowCell ' + data.Columns[k] + '">' + cell + '</td>');
                          });
                          tab.append(trow);
                      });
