@@ -187,6 +187,7 @@
     <Compile Include="Controllers\MySqlConnection.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\UserReportController.cs" />
+    <Compile Include="Controllers\WelcomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -290,6 +291,7 @@
     <Content Include="Views\Shared\_GlobalLayout.cshtml" />
     <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.min.map" />
     <None Include="Views\Shared\_ReportDataPartial.cshtml" />
+    <Content Include="Views\Welcome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

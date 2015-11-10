@@ -6,12 +6,11 @@ using System.Web.Mvc;
 
 namespace TestMVC001.Controllers
 {
-    public class ReportDataFetchController : Controller
+    public class WelcomeController : Controller
     {
-        // GET: ReportDataFetch
         public ActionResult Index()
         {
             return View();
         }
-    }
+	}
 }

@@ -7,9 +7,9 @@
      background-color: white;
     text-align: center;
 }
-.header { background-color: #008B8B;color: #ffffff;}
-.footer{ background-color: #ffffff;}
-h3 { font-size: 30px;padding: 0 !important;line-height: 40px;}
+.header, /*{width:100%; height:80px; overflow:hidden; margin: 0 auto; background-color:#252727}*/
+.footer{ background-color: #252727;color: #ffffff;padding: 15px 0 15px 30px;}
+h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0!important;}
 .report .searchCriteria{margin-left: auto;margin-right: auto;}
 #submit{ margin-right: 18px;}
 .searchLabel { font-weight: bold;}
@@ -22,3 +22,63 @@ h3 { font-size: 30px;padding: 0 !important;line-height: 40px;}
 .ui-state-disabled { background-color: white;}
 .show { display: block;}
 .hide { display: none;}
+.btnExport { margin: 20px 0;}
+
+/*Welcome page styles*/
+.welcome{ background-color: #CFE0E0;overflow:hidden; padding:35px 0;}
+.boxes{ overflow:hidden; width:908px; height:450px; margin: 0 auto; position:relative;}
+
+
+#btn1{
+	background:#06F;
+	height:200px;
+	width:265px;
+	position:relative;
+	margin-left:10px;
+	left:900px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	line-height:300px;
+	padding-left:10px;
+	text-align:left;
+
+
+}
+#btn2{
+	background:#FF4F14;
+	height:200px;
+	width:265px;
+	position:relative;
+	margin-left:10px;
+	left:900px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	line-height:300px;
+	padding-left:10px;
+	text-align:left;
+}
+
+#btn3{
+	background:#23D839;
+	border-color:#23D839;
+	height:200px;
+	width:265px;
+	position:relative;
+	margin-left:10px;
+	left:900px;
+	cursor:pointer;
+
+	color:#FFF;
+	font-size:25px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	line-height:300px;
+	padding-left:10px;
+	text-align:left;
+}
+
