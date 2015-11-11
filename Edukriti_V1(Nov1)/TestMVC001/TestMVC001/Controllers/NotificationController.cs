@@ -17,34 +17,44 @@ namespace TestMVC001.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[AllowAnonymous]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> StoreInDB(NotificationModel model, string returnUrl)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
+        [HttpPost]
+        [Authorize(Roles ="Admin")]
+        public ActionResult ProcessNotification(NotificationModel model)
+        {
+            static readonly string ConnectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
+            String NotificationSender = "School Admin";
+            String NotificationCategory = "Test";
+            using (var con = new SqlConnection(ConnectionString))
+            {
+                //Insert student attendance record and get the student details to send the SMS
+                con.Open();
 
-        //    // This doesn't count login failures towards account lockout
-        //    // To enable password failures to trigger account lockout, change to shouldLockout: true
-        //    var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-        //    switch (result)
-        //    {
-        //        case SignInStatus.Success:
-        //            //return RedirectToLocal(returnUrl);
-        //            return RedirectToAction("../Welcome");
-        //        case SignInStatus.LockedOut:
-        //            return View("Lockout");
-        //        case SignInStatus.RequiresVerification:
-        //            return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-        //        case SignInStatus.Failure:
-        //        default:
-        //            ModelState.AddModelError("", "Invalid login attempt.");
-        //            return View(model);
-        //    }
-        //}
+                string query = "INSERT INTO[dbo].[tblNotification] ([PhoneNumber],[Sender],[Message],[Category]) VALUES('" + model.ToPhoneNumber + "', '" + NotificationSender + "',  '" + model.NotificationText + "',   '" + NotificationCategory + "') ";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                var attendanceResponseModel = new AttendanceResponseModel
+                {
+                    PhoneNumber = cmd1.Parameters["@PhoneNumber"].Value.ToString(),
+                    StudentName = cmd1.Parameters["@studentName"].Value.ToString(),
+                    IsInTime = Convert.ToBoolean(cmd1.Parameters["@isInTime"].Value)
+                };
+                return attendanceResponseModel;
+            }
+            // get parameters
+            // store in db
+            //INSERT INTO[dbo].[tblNotification] ([PhoneNumber],[Sender],[Message],[Category]) VALUES(9030644017,'Admin','Test Notification Message','Admin')
+
+
+
+
+            // call smssendservice
+
+            return Content ("Sucessfully Sent Notification");
+
+
+        }
 
     }
 }
