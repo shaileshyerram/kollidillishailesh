@@ -12,11 +12,14 @@
     <link href="@Url.Content("~/Content/Styles/datepicker.css")" rel="stylesheet" type="text/css" />
 </head>
 <body>
+
 <div class="header">
     <h3 align="left">Attendance Management System</h3>
 </div>
-    
-    @RenderBody()
+    <div class="container body-content">
+        @RenderBody()
+        @RenderSection("Scripts", false);
+    </.div>
 <div class="footer"><span>Copyright (C) All rights reserved 2015</span></div>
 </body>
 </html>

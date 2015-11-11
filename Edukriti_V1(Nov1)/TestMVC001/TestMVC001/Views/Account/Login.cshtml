@@ -1,7 +1,11 @@
 ﻿@using TestMVC001.Models
 @model LoginViewModel
+
 @{
     ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_GlobalLayout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -60,4 +64,5 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    
 }

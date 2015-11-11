@@ -8,6 +8,7 @@ using TestMVC001.Core.Services;
 
 namespace TestMVC001.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ReportController : Controller
     {
         public ActionResult Index()

@@ -64,7 +64,7 @@ namespace TestMVC001.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl) 
         {
             if (!ModelState.IsValid)
             {
@@ -77,7 +77,9 @@ namespace TestMVC001.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    //TODO ==> populate the returnurl parameter
+                    //return RedirectToLocal(returnUrl);
+                    return RedirectToAction("../Welcome");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
