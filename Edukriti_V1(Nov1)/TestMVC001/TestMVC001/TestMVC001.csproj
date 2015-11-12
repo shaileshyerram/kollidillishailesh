@@ -294,13 +294,13 @@
     <Content Include="Views\UserReport\Index.cshtml" />
     <Content Include="Views\Shared\_GlobalLayout.cshtml" />
     <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.min.map" />
+    <Content Include="Views\Notification\index.cshtml" />
     <None Include="Views\Shared\_ReportDataPartial.cshtml" />
     <Content Include="Views\Welcome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Notifications\" />
-    <Folder Include="Views\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
