@@ -8,18 +8,30 @@ $(document).ready(function () {
         });
     });
 
+    //$("#fromDatepicker").datepicker({
+    //    changeMonth: true,//this option for allowing user to select month
+    //    changeYear: true, //this option for allowing user to select from year range
+    //    dateFormat: "dd-M-yy",
+    //    setDate: new Date(),
+    //    defaultDate: new Date()
+    //});
+
     $("#fromDatepicker").datepicker({
         changeMonth: true,//this option for allowing user to select month
         changeYear: true, //this option for allowing user to select from year range
         dateFormat: "dd-M-yy",
         setDate: new Date(),
         defaultDate: new Date()
-    });
+    }).val(getTodaysDate(0));
+
+
     $("#toDatepicker").datepicker({
         changeMonth: true,//this option for allowing user to select month
         changeYear: true, //this option for allowing user to select from year range
         dateFormat: "dd-M-yy"
-    });
+    }).val(getTodaysDate(0));
+
+
     $("#reset").on('click', function () {
         $('#reportForm')[0].reset.click();
         $(".reportData").empty();
@@ -71,3 +83,44 @@ $(document).ready(function () {
         return false;
     });
 });
+
+//function getTodaysDate(val) {
+//    var t = new Date, day, month, year = t.getFullYear();
+//    if (t.getDate() < 10) {
+//        day = "0" + t.getDate();
+//    }
+//    else {
+//        day = t.getDate();
+//    }
+//    if ((t.getMonth() + 1) < 10) {
+//        month = "0" + (t.getMonth() + 1 - val);
+//    }
+//    else {
+//        month = t.getMonth() + 1 - val;
+//    }
+
+//    return (day + '/' + month + '/' + year);
+//}
+
+
+
+
+function getTodaysDate(val) {
+    var t = new Date, day, month, year = t.getFullYear();
+    //var months = ["Janurary", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    if (t.getDate() < 10) {
+        day = "0" + t.getDate();
+    }
+    else {
+        day = t.getDate();
+    }
+    if ((t.getMonth() + 1) < 10) {
+        month = "0" + (t.getMonth() + 1 - val);
+    }
+    else {
+        month = t.getMonth() + 1 - val;
+    }
+
+    return (day + '-' + months[month-1] + '-' + year);
+}
