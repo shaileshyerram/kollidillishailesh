@@ -239,6 +239,8 @@ C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\TestMVC001.Core.exe
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\WebGrease.dll
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\TestMVC001.Core.pdb
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.xml
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.SqlServer.xml
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.DependencyCollector.xml
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AI.Web.xml
@@ -253,8 +255,6 @@ C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\System.Web.WebPages.Razor.xml
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Antlr3.Runtime.pdb
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Newtonsoft.Json.xml
-C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.xml
-C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\EntityFramework.SqlServer.xml
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Core.xml
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\Microsoft.AspNet.Identity.EntityFramework.xml

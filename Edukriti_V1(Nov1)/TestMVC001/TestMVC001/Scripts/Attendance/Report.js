@@ -33,8 +33,13 @@ $(document).ready(function () {
 
 
     $("#reset").on('click', function () {
-        $('#reportForm')[0].reset.click();
-        $(".reportData").empty();
+        if ($('#reportForm').length > 0) {
+            $('#reportForm')[0].reset.click();
+            $(".reportData").empty();
+        }
+        if ($('#notificationForm').length > 0) {
+            $('#notificationForm')[0].reset.click();
+        }
     });
     $("#submit").on('click', function () {
         var reportRequestModel = 
@@ -72,6 +77,50 @@ $(document).ready(function () {
                      });
                      $("tr:odd", tab).css('background-color', '#EAE9E9');
                      $(".reportData").empty().prepend(tab);
+                    $(".btnExport").show();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                //Article.progress().hideLoading();
+                alert("Error: " + error);
+            }
+        });
+        return false;
+    });
+
+    $(".notificationContent #submit").on('click', function () {
+        var reportRequestModel =
+            {
+                tophonenumber: $("textarea[name='phoneNumber']").val(),
+                message: $("textarea[name='message']").val()
+            };
+        //Article.progress().showLoading();
+        $.ajax({
+            url: $(this).attr("data-url"),
+            type: "GET",
+            //contentType: 'application/json; charset=UTF-8',
+            data: reportRequestModel,
+            datatype: "json",
+            success: function (data) {
+                if (data && data.Rows && data.Rows.length > 0) {
+                    var tab = $('<table class="reportDataTable" rules="all"></table>');
+
+                    var thead = $('<thead></thead>');
+                    var tcrow = $('<tr></tr>');
+                    $.each(data.Columns, function (i, cell) {
+                        tcrow.append('<th class="columnCell">' + cell + '</th>');
+                    });
+                    thead.append(tcrow);
+                    tab.append(thead);
+                    $.each(data.Rows, function (j, row) {
+                        var trow = $('<tr></tr>');
+                        $.each(row.RowCells, function (k, cell) {
+                            trow.append('<td class="rowCell ' + data.Columns[k] + '">' + cell + '</td>');
+                        });
+                        tab.append(trow);
+                    });
+                    $("tr:odd", tab).css('background-color', '#EAE9E9');
+                    $(".reportData").empty().prepend(tab);
                     $(".btnExport").show();
                 }
             },

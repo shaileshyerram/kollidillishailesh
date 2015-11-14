@@ -1,60 +1,44 @@
-﻿using System;
+﻿
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Net;
-using System.Text;
+using System.Linq;
+using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
+using TestMVC001.Core.Models;
+using TestMVC001.Core.Services;
 using TestMVC001.Models;
 
 namespace TestMVC001.Controllers
 {
     public class NotificationController : Controller
     {
-        static readonly string ConnectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
         // GET: Notification
         public ActionResult Index()
         {
             return View();
         }
 
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
-        public ActionResult ProcessNotification(NotificationModel model)
+        [Route("sendnotification")]
+        [Authorize(Roles ="Admin")]
+        public JsonResult SendNotification(NotificationModel model)
         {
-
-            string NotificationSender = "School Admin";
+            string ConnectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
+            String NotificationSender = "School Admin";
             String NotificationCategory = "Test";
-
             using (var con = new SqlConnection(ConnectionString))
             {
-                //Insert student attendance record and get the student details to send the SMS
                 con.Open();
-
-                string query =
-                    "INSERT INTO[dbo].[tblNotification] ([PhoneNumber],[Sender],[Message],[Category]) VALUES('" +
-                    model.ToPhoneNumber + "', '" + NotificationSender + "',  '" + model.NotificationText + "',   '" +
-                    NotificationCategory + "') ";
+                string query = "INSERT INTO[dbo].[tblNotification] ([PhoneNumber],[Sender],[Message],[Category]) VALUES('" + model.ToPhoneNumber + "', '" + NotificationSender + "',  '" + model.Message + "',   '" + NotificationCategory + "') ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
-
-
-                string bulkUrl =
-                    "http://tra.bulksmshyderabad.co.in/websms/sendsms.aspx?userid=demosms&password=123456&sender=INTECH&";
-                string mobileNo = "9030644017";
-
-                StringBuilder sb = new StringBuilder();
-                sb.Append(bulkUrl);
-                sb.Append("mobileno=" + mobileNo);
-                sb.Append("&msg=" + model.NotificationText);
-
-                var client = new WebClient();
-                var content = client.DownloadString(sb.ToString());
-
-
-
             }
-            return View();
+            var smsResponseModel = SendSmsService.SendNotification(model.ToPhoneNumber, model.Message);
+            AttendanceService.InsertSmsResponse(smsResponseModel);
+            return new JsonResult { Data = "Message sent", JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
+
     }
 }

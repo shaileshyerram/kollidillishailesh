@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Notification";
+    Layout = "~/Views/Shared/_GlobalLayout.cshtml";
+}
+
+<h2>Send Notification</h2>
+
+<div class="notificationContent">
+    <form id="notificationForm">
+        <table class="notificationTable">
+            <tr><td class="ntfnLabel" align="left">Mobile number:</td><td><textarea rows="2" cols="75" name="phoneNumber" placeholder="Enter phone numbers separated by comma"></textarea></td></tr>
+            <tr><td class="ntfnLabel" align="left">Message:</td><td><textarea rows="10" cols="75" name="message"></textarea></td></tr>
+        </table>
+        <br />
+        <input type="submit" value="Submit" id="submit" data-url="@Url.Action("SendNotification", "Notification")">
+        <input type="reset" value="Reset" id="reset">
+    </form>
+</div>

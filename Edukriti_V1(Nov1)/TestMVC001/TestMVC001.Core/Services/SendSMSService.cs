@@ -28,5 +28,17 @@ namespace TestMVC001.Core.Services
                 SmsUrl = smsUrl
             };
         }
+        public static SmsResponseModel SendNotification(string phoneNumber, string message)
+        {
+            string smsUrl = String.Format("{0}&mobileno={1}&msg={2}",
+                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], phoneNumber, message);
+            var client = new WebClient();
+            var response = client.DownloadString(smsUrl);
+            return new SmsResponseModel
+            {
+                Response = response,
+                SmsUrl = smsUrl
+            };
+        }
     }
 }
