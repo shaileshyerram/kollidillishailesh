@@ -1,0 +1,155 @@
+﻿@*@model IEnumerable<TestMVC001.Models.Student>*@
+@model PagedList.IPagedList<TestMVC001.Models.Student>
+@using PagedList
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Students";
+}
+
+<h2>Students</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Students", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.StudentFirstName)*@
+            @Html.ActionLink("First Name", "Index", new { sortOrder = "FirstName", currentSort = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(student =>  (student.StudentMiddleName)*@
+            @Html.DisplayNameFor(model => model.First().StudentMiddleName)
+            @*@Html.DisplayName("Middle Name")*@
+            @*@Html.ActionLink("Middle Name", "Index", new { sortOrder ="MiddleName", currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.StudentLastName)*@
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = "LastName", currentSort = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Class)
+            @*@Html.ActionLink("Class", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Section)
+            @*@Html.ActionLink("Section", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Gender)
+            @*@Html.ActionLink("Gender", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DateOfBirth)
+            @*@Html.ActionLink("DOB", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.RFID)*@
+            @Html.ActionLink("RFID", "Index", new { sortOrder = "RFID", currentSort = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ParentFirstName)
+            @*@Html.ActionLink("Parent First Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ParentMiddleName)
+            @*@Html.ActionLink("Parent Middle Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ParentLastName)
+            @*@Html.ActionLink("Parent Last Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ParentPrimaryPhoneNumber)
+            @*@Html.ActionLink("Parent Phone Number", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ParentHomePhoneNumber)
+            @*@Html.ActionLink("Home Phone Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ParentEmailId)
+            @*@Html.ActionLink("Parent Email", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ORGID)
+            @*@Html.ActionLink("OrgID", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+        </th>
+        <th>
+            @Html.DisplayName("Action")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentMiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Section)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentMiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentPrimaryPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentHomePhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentEmailId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ORGID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.StudentId}) | @Html.ActionLink("Details", "Details", new {id = item.StudentId}) | @Html.ActionLink("Delete", "Delete", new {id = item.StudentId})
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
