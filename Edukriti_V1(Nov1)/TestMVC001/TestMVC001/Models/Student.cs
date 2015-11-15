@@ -77,16 +77,14 @@ namespace TestMVC001.Models
         [RegularExpression(@"\d{4,20}")]
         public string Orgid { get; set; }
 
-        //public string StudentName
-        //{
-        //    get
-        //    {
-        //        return string.Format("{0} {1} {2}", StudentFirstName, StudentMiddleName, StudentLastName);
-
-        //    }
-        //}
-        public string StudentName => $"{StudentFirstName} {StudentMiddleName} {StudentLastName}";
-        public string ParentName => $"{ParentFirstName} {ParentMiddleName} {ParentLastName}";
+        public string StudentName
+        {
+            get { return string.Format("{0} {1} {2}", StudentFirstName, StudentMiddleName, StudentLastName); }
+        }
+        public string ParentName
+        {
+            get { return string.Format("{0} {1} {2}", ParentFirstName, ParentMiddleName, ParentLastName); }
+        }
      }
 
 

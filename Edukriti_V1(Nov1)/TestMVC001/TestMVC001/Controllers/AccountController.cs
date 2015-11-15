@@ -79,7 +79,7 @@ namespace TestMVC001.Controllers
                 case SignInStatus.Success:
                     //TODO ==> populate the returnurl parameter
                     //return RedirectToLocal(returnUrl);
-                    return RedirectToAction("../Welcome");
+                    return RedirectToAction("../Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

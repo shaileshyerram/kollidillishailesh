@@ -1,2 +1,24 @@
 ﻿
+@{
+    ViewBag.Title = "Home";
+}
 
+<div class="home">
+    <div class="boxes">
+        <a href="@Url.Action("Index", "Report")" target="_self">
+            <div id="btn1" style="float: left; left: 0px;">
+                <p> Attendance Reports </p>
+            </div>
+        </a>
+        <a href="@Url.Action("Create", "Student")" target="_self">
+            <div id="btn2" style="float: left; left: 20px;">
+                <p> Manage Students </p>
+            </div>
+        </a>
+        <a href="@Url.Action("Index", "Notification")" target="_self">
+            <div id="btn3" style="float: left; left: 40px;">
+                <p> Send SMS Notifications </p>
+            </div>
+        </a>
+    </div>
+</div>

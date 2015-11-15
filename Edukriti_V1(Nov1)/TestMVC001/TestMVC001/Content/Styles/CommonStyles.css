@@ -20,8 +20,8 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 .hide { display: none;}
 .btnExport { margin: 20px 0;}
 
-/*Welcome page styles*/
-.welcome{ overflow:hidden; padding:35px 0;}
+/*Home page styles*/
+.home{ overflow:hidden; padding:35px 0;}
 .boxes{ overflow:hidden; width:908px; height:450px; margin: 0 auto; position:relative;}
 
 /*Notification page styles*/
