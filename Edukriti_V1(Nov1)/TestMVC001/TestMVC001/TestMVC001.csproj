@@ -292,7 +292,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\UserReport\Index.cshtml" />
-    <Content Include="Views\Shared\_GlobalLayout.cshtml" />
     <Content Include="Scripts\Bundles\jquery\jquery-1.10.2.min.map" />
     <Content Include="Views\Notification\Index.cshtml" />
     <None Include="Views\Shared\_ReportDataPartial.cshtml" />
@@ -300,7 +299,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Notifications\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

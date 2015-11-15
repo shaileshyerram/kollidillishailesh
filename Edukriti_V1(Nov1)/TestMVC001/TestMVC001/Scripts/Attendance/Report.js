@@ -41,7 +41,7 @@ $(document).ready(function () {
             $('#notificationForm')[0].reset.click();
         }
     });
-    $("#submit").on('click', function () {
+    $(".report #submit").on('click', function () {
         var reportRequestModel = 
             {
                 name : $("input[name='name']").val(),
@@ -102,27 +102,7 @@ $(document).ready(function () {
             data: reportRequestModel,
             datatype: "json",
             success: function (data) {
-                if (data && data.Rows && data.Rows.length > 0) {
-                    var tab = $('<table class="reportDataTable" rules="all"></table>');
-
-                    var thead = $('<thead></thead>');
-                    var tcrow = $('<tr></tr>');
-                    $.each(data.Columns, function (i, cell) {
-                        tcrow.append('<th class="columnCell">' + cell + '</th>');
-                    });
-                    thead.append(tcrow);
-                    tab.append(thead);
-                    $.each(data.Rows, function (j, row) {
-                        var trow = $('<tr></tr>');
-                        $.each(row.RowCells, function (k, cell) {
-                            trow.append('<td class="rowCell ' + data.Columns[k] + '">' + cell + '</td>');
-                        });
-                        tab.append(trow);
-                    });
-                    $("tr:odd", tab).css('background-color', '#EAE9E9');
-                    $(".reportData").empty().prepend(tab);
-                    $(".btnExport").show();
-                }
+                //TODO
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //Article.progress().hideLoading();

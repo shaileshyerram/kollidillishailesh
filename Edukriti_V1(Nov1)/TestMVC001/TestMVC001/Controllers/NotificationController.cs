@@ -12,6 +12,7 @@ using TestMVC001.Models;
 
 namespace TestMVC001.Controllers
 {
+    //[Authorize(Roles = "Admin")]
     public class NotificationController : Controller
     {
         // GET: Notification
@@ -21,13 +22,12 @@ namespace TestMVC001.Controllers
         }
 
         [Route("sendnotification")]
-        [Authorize(Roles ="Admin")]
         public JsonResult SendNotification(NotificationModel model)
         {
-            string ConnectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
+            string connectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
             String NotificationSender = "School Admin";
             String NotificationCategory = "Test";
-            using (var con = new SqlConnection(ConnectionString))
+            using (var con = new SqlConnection(connectionString))
             {
                 con.Open();
                 string query = "INSERT INTO[dbo].[tblNotification] ([PhoneNumber],[Sender],[Message],[Category]) VALUES('" + model.ToPhoneNumber + "', '" + NotificationSender + "',  '" + model.Message + "',   '" + NotificationCategory + "') ";
