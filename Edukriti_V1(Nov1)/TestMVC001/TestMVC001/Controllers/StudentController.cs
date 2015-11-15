@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
+using TestMVC001.Core.Services;
 using TestMVC001.Models;
 
 namespace TestMVC001.Controllers
@@ -24,6 +27,7 @@ namespace TestMVC001.Controllers
         //GET: Student/Details/
         public ActionResult Details()
         {
+            //TODO get given student details from database.
             var student = new Student
             {
                 StudentId =143,
@@ -48,22 +52,6 @@ namespace TestMVC001.Controllers
         }
 
 
-        //bigint StudentId
-        //varchar StudentFirstName
-        //varchar StudentMiddleName
-        //varchar StudentLastName
-        //varchar Class
-        //varchar Section
-        //varchar Gender
-        //datetime DateOfBirth
-        //varchar Rfid
-        //varchar ParentFirstName
-        //varchar ParentMiddleName
-        //varchar ParentLastName
-        //float ParentPrimaryPhoneNumber
-        //float ParentHomePhoneNumber
-        //varchar ParentEmailId
-        //varchar Orgid
 
 
         // GET: Student/Create
@@ -78,13 +66,49 @@ namespace TestMVC001.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                
                 if (!ModelState.IsValid)
                 {
                     return View(student);
                 }
 
-                //return RedirectToAction("Index");
+                // TODO: Add insert logic here
+
+
+                string connectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
+              
+                using (var con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    string studentInsertQuery= 
+                              "INSERT INTO [dbo].[tblStudent]  ([StudentFirstName],[StudentMiddleName],[StudentLastName],[Class]," +
+                              "         [Section],[Gender],[DateOfBirth],[RFID],[ParentFirstName],[ParentMiddleName],[ParentLastName],[ParentPrimaryPhoneNumber]," +
+                              "             [ParentHomePhoneNumber],[ParentEmailId],[ORGID]) VALUES('"
+                              + student.StudentFirstName+ "', '"
+                              + student.StudentMiddleName + "', '" 
+                              + student.StudentLastName + "', '"
+                              + student.Class + "', '"
+                              + student.Section + "', '"
+                              + student.Gender + "', '"
+                              + student.DateOfBirth + "', '"
+                              + student.Rfid + "', '"
+                              + student.ParentFirstName + "', '"
+                              + student.ParentMiddleName + "', '"
+                              + student.ParentLastName + "', '"
+                              + student.ParentPrimaryPhoneNumber + "', '"
+                              + student.ParentHomePhoneNumber + "', '"
+                              + student.ParentEmailId + "', '"
+                              + student.Orgid + 
+                              "')"
+                              ;
+                    
+                    SqlCommand cmd = new SqlCommand(studentInsertQuery, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+
+
                 return View();
 
             }

@@ -8,13 +8,14 @@ $(document).ready(function () {
         });
     });
 
-    //$("#fromDatepicker").datepicker({
-    //    changeMonth: true,//this option for allowing user to select month
-    //    changeYear: true, //this option for allowing user to select from year range
-    //    dateFormat: "dd-M-yy",
-    //    setDate: new Date(),
-    //    defaultDate: new Date()
-    //});
+    $(".form-control#DOBDatePicker").datepicker({
+        changeMonth: true,//this option for allowing user to select month
+        changeYear: true, //this option for allowing user to select from year range
+        dateFormat: "dd-M-yy",
+        setDate: new Date(),
+        defaultDate: new Date()
+    });
+
 
     $("#fromDatepicker").datepicker({
         changeMonth: true,//this option for allowing user to select month
