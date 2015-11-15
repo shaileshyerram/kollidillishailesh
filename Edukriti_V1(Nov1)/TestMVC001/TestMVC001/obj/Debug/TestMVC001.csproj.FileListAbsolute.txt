@@ -277,3 +277,10 @@ C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\Te
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.EntityFramework.xml
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.Mvc.dll
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.Mvc.xml
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.dll
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.EntityFramework.dll
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.Mvc.dll
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.xml
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.EntityFramework.pdb
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.EntityFramework.xml
+C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001\bin\PagedList.Mvc.xml
