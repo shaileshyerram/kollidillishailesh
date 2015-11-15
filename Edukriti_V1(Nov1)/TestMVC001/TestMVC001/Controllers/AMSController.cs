@@ -6,6 +6,8 @@ using TestMVC001.Core.Models;
 using TestMVC001.Core.Services;
 using TestMVC001.Models;
 
+//AMS - Attendance Message/Management Service
+
 namespace TestMVC001.Controllers
 {
     public class AMSController : Controller
