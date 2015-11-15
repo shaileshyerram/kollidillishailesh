@@ -1,12 +1,8 @@
 ﻿body {
-     margin: 0; 
-     font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif; 
-     font-size: 14px; 
-     line-height: 20px; 
-     color: #333333; 
-     background-color: white;
     text-align: center;
+    background-color: #F5FBFB !important;
 }
+.navbar { position: relative !important;}
 .header, /*{width:100%; height:80px; overflow:hidden; margin: 0 auto; background-color:#252727}*/
 .footer{ background-color: #252727;color: #ffffff;padding: 15px 0 15px 30px;}
 h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0!important;}
@@ -25,7 +21,7 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 .btnExport { margin: 20px 0;}
 
 /*Welcome page styles*/
-.welcome{ background-color: #CFE0E0;overflow:hidden; padding:35px 0;}
+.welcome{ overflow:hidden; padding:35px 0;}
 .boxes{ overflow:hidden; width:908px; height:450px; margin: 0 auto; position:relative;}
 
 /*Notification page styles*/
@@ -35,14 +31,14 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 .ntfnText { display: inline-block;}
 
 #btn1{
-	background:#06F;
+	background:#819BC1;
+    border-color:#819BC1;
 	height:200px;
 	width:265px;
 	position:relative;
 	margin-left:10px;
 	left:900px;
 	cursor:pointer;
-
 	color:#FFF;
 	font-size:25px;
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -53,7 +49,8 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 
 }
 #btn2{
-	background:#FF4F14;
+	background:#FF9A33;
+    border-color:#FF9A33;
 	height:200px;
 	width:265px;
 	position:relative;
@@ -70,8 +67,8 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 }
 
 #btn3{
-	background:#23D839;
-	border-color:#23D839;
+	background:#19A92A;
+	border-color:#19A92A;
 	height:200px;
 	width:265px;
 	position:relative;
