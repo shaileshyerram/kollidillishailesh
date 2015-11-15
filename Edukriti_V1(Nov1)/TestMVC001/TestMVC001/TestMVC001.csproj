@@ -208,6 +208,8 @@
     <Content Include="Content\Img\arrow.png" />
     <Content Include="Content\Img\darkdenim3.png" />
     <Content Include="Content\Img\dark_leather.png" />
+    <Content Include="Content\Img\logo.png" />
+    <Content Include="Content\Img\logo2.png" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\bootstrap.min.css" />
     <Content Include="Content\Styles\CommonStyles.css" />
