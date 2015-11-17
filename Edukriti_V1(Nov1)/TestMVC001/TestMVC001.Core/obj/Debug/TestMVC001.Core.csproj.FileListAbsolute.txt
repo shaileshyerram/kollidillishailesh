@@ -12,4 +12,3 @@ C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\Te
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\Newtonsoft.Json.xml
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.exe
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.pdb
-C:\edu\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.csprojResolveAssemblyReference.cache

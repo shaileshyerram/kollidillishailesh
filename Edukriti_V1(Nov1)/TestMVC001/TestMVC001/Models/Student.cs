@@ -41,6 +41,7 @@ namespace TestMVC001.Models
         public string Gender { get; set; }
 
         [DataType(DataType.Date)]
+        [Display(Name = "Date Of Birth")]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
 
         [Required]
@@ -53,28 +54,28 @@ namespace TestMVC001.Models
         [StringLength(255, MinimumLength = 2)]
         public string ParentFirstName { get; set; }
 
-        [Display(Name = "Parent Middle Name")]
+        [Display(Name = "Middle Name")]
         [StringLength(255, MinimumLength = 2)]
         public string ParentMiddleName { get; set; }
 
         [Required]
-        [Display(Name = "Parent Last Name")]
+        [Display(Name = "Last Name")]
         [StringLength(255, MinimumLength = 2)]
         public string ParentLastName { get; set; }
 
         [Required]
-        [Display(Name = "Parent Phone Number")]
+        [Display(Name = "Parent Phone #")]
         //[RegularExpression(@"\d")]
         [DataType(DataType.PhoneNumber)]
         public Nullable<double> ParentPrimaryPhoneNumber { get; set; }
 
-        [Display(Name = "Home Phone Number")]
+        [Display(Name = "Home Phone #")]
         //[RegularExpression(@"\d")]
         [DataType(DataType.PhoneNumber)]
         public Nullable<double> ParentHomePhoneNumber { get; set; }
 
         [Required]
-        [Display(Name = "Parent Email Address")]
+        [Display(Name = "Parent Email")]
         [DataType(DataType.EmailAddress)]
         public string ParentEmailId { get; set; }
 

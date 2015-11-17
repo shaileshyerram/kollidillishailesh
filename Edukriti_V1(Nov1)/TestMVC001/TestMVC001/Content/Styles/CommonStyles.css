@@ -11,14 +11,14 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 .searchLabel { font-weight: bold;}
 .reportDataTable{border: solid 1px #cccccc;margin-left: auto;margin-right: auto;width: 95%;}
 /*.rowCell{border: solid 1px #cccccc;}*/
-.reportDataTable >thead {background-color: #008B8B;color: #ffffff;font-size: 15px;}
+.reportDataTable >thead {background-color: #428bca;color: #ffffff;font-size: 15px;}
 .reportDataTable >tbody >tr >td.Name, .reportDataTable >tbody >tr >td.Category,
 .reportDataTable >tbody >tr >td.Gender { text-align: left;padding-left: 20px;}
 /*Datepicker customize styles */
 .ui-state-disabled { background-color: white;}
 .show { display: block;}
 .hide { display: none;}
-.btnExport { margin: 20px 0;}
+.btnExport { margin: 0 auto;}
 
 /*Home page styles*/
 .home{ overflow:hidden; padding:35px 0;}
@@ -66,3 +66,40 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 }
 .boxesContainer a{ color: #ffffff !important;}
 footer{ text-align: center;}
+.table.studentTable {
+    border: solid 1px #cccccc;
+    margin-left: auto;
+    margin-right: auto;
+}
+.table.studentTable tbody > tr > th, .table tbody > tr > td { padding: 3px !important;}
+.table.studentTable tbody > tr:nth-child(odd) {
+    background-color: #EAE9E9;
+}
+
+.navbar-inverse { background-color: #428bca !important; }
+
+.navbar-inverse .navbar-nav > li > a { color: #ffffff !important;}
+
+.studentTable >tbody >tr >th.action, .studentTable >tbody >tr >th.section, .studentTable >tbody >tr >th.gender,
+.studentTable >tbody >tr >td.action, .studentTable >tbody >tr >td.section, .studentTable >tbody >tr >td.gender {
+    text-align: center !important;
+}
+.studentTable >tbody >tr >td.action a{ color: #333333 !important;}
+.studentTable >tbody >tr:first-child th {
+    background-color: #428bca !important;
+    color: #ffffff;
+}
+.studentTable a {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+.btnStudentSearch{
+    height: 28px;
+    padding-top: 3px !important;
+}
+
+/* generic styles */
+.center { margin: 0 auto;}
+.bold{ font-weight: bold !important;}
+.underline { text-decoration: underline !important;}

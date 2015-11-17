@@ -13,7 +13,8 @@ $(document).ready(function () {
         changeYear: true, //this option for allowing user to select from year range
         dateFormat: "dd-M-yy",
         setDate: new Date(),
-        defaultDate: new Date()
+        defaultDate: new Date(),
+        yearRange: "-100:+0"
     });
 
 
@@ -22,14 +23,16 @@ $(document).ready(function () {
         changeYear: true, //this option for allowing user to select from year range
         dateFormat: "dd-M-yy",
         setDate: new Date(),
-        defaultDate: new Date()
+        defaultDate: new Date(),
+        yearRange: "-30:+0"
     }).val(getTodaysDate(0));
 
 
     $("#toDatepicker").datepicker({
         changeMonth: true,//this option for allowing user to select month
         changeYear: true, //this option for allowing user to select from year range
-        dateFormat: "dd-M-yy"
+        dateFormat: "dd-M-yy",
+        yearRange: "-30:+0"
     }).val(getTodaysDate(0));
 
 
@@ -78,7 +81,7 @@ $(document).ready(function () {
                      });
                      $("tr:odd", tab).css('background-color', '#EAE9E9');
                      $(".reportData").empty().prepend(tab);
-                    $(".btnExport").show();
+                     $(".btnExport").removeClass("hide").addClass("show");
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {

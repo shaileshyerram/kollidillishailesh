@@ -6,16 +6,9 @@
 <h2>Attendance Report</h2>
 
 <div class="report">
-    <form id="reportForm">
-        <table class="searchCriteria">
-            <tr><td><label class="col-md-2 control-label">Name</label></td><td><input class="form-control" type="text" name="name"></td></tr>
-            <tr><td><label class="col-md-2 control-label">Class</label></td><td><input class="form-control" type="text" name="class"></td></tr>
-            <tr><td><label class="col-md-2 control-label">Section</label></td><td><input class="form-control" type="text" name="section"></td></tr>
-            <tr><td><label class="col-md-2 control-label">Date From</label></td><td><input class="form-control" type="text" name="dateFrom" id="fromDatepicker"></td></tr>
-            <tr><td><label class="col-md-2 control-label">Date To</label></td><td><input class="form-control" type="text" name="dateTo" id="toDatepicker" /></td></tr>
-        </table>
-        <br/>
-        @*<div class="form-group">
+    <form id="reportForm" class="form-horizontal" role="form">
+        <br />
+        <div class="form-group">
             <label class="col-md-2 control-label" for="Name">Name</label>
             <div class="col-md-10">
                 <input class="form-control" id="Name" name="Name" type="text" value="">
@@ -34,24 +27,27 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label" for="dateFrom">Date From</label>
+            <label class="col-md-2 control-label" for="fromDatepicker">Date From</label>
             <div class="col-md-10">
-                <input class="form-control" id="dateFrom" name="dateFrom" type="text" id="fromDatepicker">
+                <input class="form-control" name="dateFrom" type="text" id="fromDatepicker">
             </div>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label" for="Class">Class</label>
+            <label class="col-md-2 control-label" for="toDatepicker">Date To</label>
             <div class="col-md-10">
-                <input class="form-control" id="Class" name="Class" type="text" value="">
+                <input class="form-control" name="dateTo" type="text" id="toDatepicker">
             </div>
-        </div>*@
-
-        <input type="submit" value="Submit" id="submit" class="btn btn-success" data-url="@Url.Action("GetReport", "Report")">
-        <input type="reset" value="Reset" id="reset" class="btn btn-success">
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" id="submit" class="btn btn-primary center" data-url="@Url.Action("GetReport", "Report")">
+                <input type="reset" value="Reset" id="reset" class="btn btn-primary center">
+            </div>
+        </div>
     </form>
     <br/>
-    <br/>
     <div class="reportData"></div>
-    <button class="btnExport hide">Export to excel</button>
+    <br />
+    <button class="btnExport hide btn btn-primary">Export to excel</button>
 </div>
 

@@ -354,9 +354,6 @@
     <Content Include="Views\Notification\Index.cshtml" />
     <Content Include="Views\AMS\Index.cshtml" />
     <None Include="Views\Shared\_ReportDataPartial.cshtml" />
-    <Content Include="Views\OldStudent\Details.cshtml" />
-    <Content Include="Views\OldStudent\Index.cshtml" />
-    <Content Include="Views\OldStudent\Create.cshtml" />
     <Content Include="Views\Students\Create.cshtml" />
     <Content Include="Views\Students\Delete.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
