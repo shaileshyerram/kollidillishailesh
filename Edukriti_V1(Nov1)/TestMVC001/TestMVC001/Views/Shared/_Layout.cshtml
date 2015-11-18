@@ -8,13 +8,11 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <!--Below Line added by Shailesh-->
-    @*<script type="text/javascript" src="~/Scripts/Bundles/jquery/jquery-1.10.2.min.js"></script>*@
-    @*<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.18.custom.min.js")"></script>*@
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
-    <script type="text/javascript" src="@Url.Content("~/Scripts/Attendance/Report.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.table2excel.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Attendance/Report.js")"></script>
 
     <link href="@Url.Content("~/Content/Styles/CommonStyles.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Styles/normalize.css")" rel="stylesheet" type="text/css" />
