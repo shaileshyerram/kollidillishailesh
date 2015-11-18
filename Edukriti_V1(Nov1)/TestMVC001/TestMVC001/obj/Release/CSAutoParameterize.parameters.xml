@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="myConnectionString-Web.config Connection String" description="myConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:s11.winhost.com;Initial Catalog=DB_95608_edukriti;User ID=DB_95608_edukriti_user;Password=edukriti;Integrated Security=False;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\School\\Project\\Application\\Edukriti_V1\(Nov1\)\\TestMVC001\\TestMVC001\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='myConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\School\\Project\\Application\\kollidillishailesh\\Edukriti_V1\(Nov1\)\\TestMVC001\\TestMVC001\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='myConnectionString']/@connectionString" />
   </parameter>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="DefaultConnection_ConnectionString" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\School\\Project\\Application\\Edukriti_V1\(Nov1\)\\TestMVC001\\TestMVC001\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:s11.winhost.com;Initial Catalog=DB_95608_edukriti;User ID=DB_95608_edukriti_user;Password=edukriti;Integrated Security=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\School\\Project\\Application\\kollidillishailesh\\Edukriti_V1\(Nov1\)\\TestMVC001\\TestMVC001\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DB_95608_edukritiEntities-Web.config Connection String" description="DB_95608_edukritiEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.AttendeeModel.csdl|res://*/Models.AttendeeModel.ssdl|res://*/Models.AttendeeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tcp:s11.winhost.com;initial catalog=DB_95608_edukriti;integrated security=False;user id=DB_95608_edukriti_user;password=edukriti;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\School\\Project\\Application\\kollidillishailesh\\Edukriti_V1\(Nov1\)\\TestMVC001\\TestMVC001\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DB_95608_edukritiEntities']/@connectionString" />
   </parameter>
 </parameters>
