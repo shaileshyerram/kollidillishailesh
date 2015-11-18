@@ -4,15 +4,30 @@
 
 <div class="home col-md-offset-2 col-md-10">
     <div class="boxesContainer">
-        <div id="btn1" class="boxes" style="float: left; left: 0px;">
-            <a href="@Url.Action("Index", "Report")" target="_self">Attendance Reports</a>
+        <div class="boxes outerBox" style="border: solid 1px #819bc1;">
+            <div class="box1Img"></div>
+            <div id="btn1" class="boxes"  style="float: left;">
+                <a href="@Url.Action("Index", "Report")" target="_self">Attendance Reports</a>
+            </div>
         </div>
-        <div id="btn2" class="boxes" style="float: left; left: -8px;">
-            <a href="@Url.Action("Index", "Students")" target="_self">Manage Students</a>
+        <div class="boxes outerBox" style="border:solid 1px #FF9A33;">
+            <div class="box2Img"></div>
+            <div id="btn2" class="boxes" style="float: left;">
+                <a href="@Url.Action("Index", "Students")" target="_self">Manage Students</a>
+            </div>
         </div>
-        <div id="btn3" class="boxes" style="float: left; left: -16px;">
-            <a href="@Url.Action("Index", "Notification")" target="_self">Send SMS Notifications</a>
+        <div class="boxes outerBox" style="border: solid 1px #19A92A;">
+            <div class="box3Img"></div>
+            <div id="btn3" class="boxes" style="float: left;">
+                <a href="@Url.Action("Index", "Notification")" target="_self" class="pd-xs">Send SMS Notifications</a>
+            </div>
         </div>
-    </div>
+        @*<div class="otb">
+            <a href="#" class="d-s ob Ss3ej" style="background-color: rgba(125, 86, 193, 0.87); height: 142px;">
+                <img src="url('../img/attendance.png')" class="photo P7b">
+            </a>
+            <div class="OjFbwd" style="background-color: rgba(125, 86, 193, 1); height: 110px;"></div>
+        </div>*@
+        </div>
 </div>
 
