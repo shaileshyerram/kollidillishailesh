@@ -115,6 +115,35 @@ $(document).ready(function () {
         });
         return false;
     });
+
+
+    // added for new notification form
+    $("#message").keyup(function() {
+
+        var maxLength = 120;
+        var length = $(this).val().length;
+
+        $("#message-characters").text(maxLength - length + " characters left.");
+
+        if (length > maxLength) {
+
+            $("#message-characters").css({
+                "color": "#ccc"
+            });
+
+            $("#button-send").attr({
+                "disabled": "disabled"
+            });
+
+        } else {
+
+            $("#message-characters").css({
+                "color": "#fff"
+            });
+
+            $("#button-send").removeAttr("disabled");
+        }
+    });
 });
 
 //function getTodaysDate(val) {
@@ -157,3 +186,8 @@ function getTodaysDate(val) {
 
     return (day + '-' + months[month-1] + '-' + year);
 }
+
+
+
+
+

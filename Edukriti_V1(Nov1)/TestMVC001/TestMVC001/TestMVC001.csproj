@@ -257,10 +257,10 @@
     <Content Include="Content\Styles\datepicker.css" />
     <Content Include="Content\Styles\normalize.css" />
     <Content Include="Content\Styles\PagedList.css" />
+    <Content Include="Content\Styles\SMSNotification.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Styles\Site.css" />
     <Content Include="Models\AttendeeModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>AttendeeModel.edmx</DependentUpon>

@@ -1,0 +1,83 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* ---------- ERIC MEYER'S RESET CSS ---------- */
+/* ---------- http://meyerweb.com/eric/tools/css/reset/ ---------- */
+
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+
+
+
+/* ---------- MESSAGE-FORM ---------- */
+
+#message-form {
+	border-radius: 0 0 5px 5px;
+	margin: 50px auto;
+	width: 360px;
+}
+
+#message-form header {
+	background-color: #3d5054;
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	padding: 10px 0;
+}
+
+#message-form header h3 {
+	color: #fff;
+	text-align: center;
+}
+
+#message-form textarea {
+	font-size: 16px;
+	line-height: 1.5em;
+	height: 160px;
+	padding: 10px;
+	max-width: 340px;
+	outline: none;
+	resize: none;
+	width: 340px;
+}
+
+#message-form footer {
+	background-color: #3d5054;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	padding: 10px 16px;
+}
+
+#message-form input[type="submit"] {
+	background-color: #6596a1;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #fff;
+	float: right;
+	font-size: 16px;
+	line-height: 1.5em;
+	padding: 2px 16px;
+}
+
+#message-form input[type="submit"]:disabled {
+	background-color: #4d6f77;
+	color: #ccc;
+}
+
+#message-form input[type="reset"] {
+	background-color: #6596a1;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #fff;
+	float: right;
+	font-size: 16px;
+	line-height: 1.5em;
+	padding: 2px 16px;
+}
+
+#message-form input[type="reset"]:disabled {
+	background-color: #4d6f77;
+	color: #ccc;
+}

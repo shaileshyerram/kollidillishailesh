@@ -69,7 +69,8 @@ namespace TestMVC001.Controllers
                         if (requestModel.RfId != null)
                         {
                             //For Successfull Insertion Of Data Into database We are giving response To the device
-                            return View(requestModel);
+                            //return View(requestModel);
+                            Response.Write("$RFID=0#");
                         }
                     }
                 }
