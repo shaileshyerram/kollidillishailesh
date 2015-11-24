@@ -22,7 +22,6 @@ namespace TestMVC001.Models
         [StringLength(255, MinimumLength = 2)]
         public string StudentFirstName { get; set; }
 
-        [Required]
         [Display(Name = "Middle Name")]
         [StringLength(255, MinimumLength = 2)]
         public string StudentMiddleName { get; set; }
@@ -71,6 +70,7 @@ namespace TestMVC001.Models
 
         [Display(Name = "Home Phone #")]
         //[RegularExpression(@"\d")]
+        [StringLength(10)]
         [DataType(DataType.PhoneNumber)]
         public Nullable<double> ParentHomePhoneNumber { get; set; }
 
@@ -89,7 +89,7 @@ namespace TestMVC001.Models
 //{
 //    using System;
 //    using System.Collections.Generic;
-    
+
 //    public partial class Student
 //    {
 //        public long StudentId { get; set; }
@@ -110,3 +110,9 @@ namespace TestMVC001.Models
 //        public string ORGID { get; set; }
 //    }
 //}
+
+public enum Gender
+{
+    M,
+    F
+}

@@ -8,15 +8,23 @@ $(document).ready(function () {
         });
     });
 
-    $(".form-control#DOBDatePicker").datepicker({
+    //$(".form-control #DOBDatePicker").datepicker({
+    //    changeMonth: true,//this option for allowing user to select month
+    //    changeYear: true, //this option for allowing user to select from year range
+    //    dateFormat: "dd-M-yy",
+    //    setDate: new Date(),
+    //    defaultDate: new Date(),
+    //    yearRange: "-100:+0"
+    //});
+
+    $("#DateOfBirth").datepicker({
         changeMonth: true,//this option for allowing user to select month
         changeYear: true, //this option for allowing user to select from year range
         dateFormat: "dd-M-yy",
         setDate: new Date(),
         defaultDate: new Date(),
-        yearRange: "-100:+0"
+        yearRange: "-70:+0"
     });
-
 
     $("#fromDatepicker").datepicker({
         changeMonth: true,//this option for allowing user to select month
@@ -105,12 +113,19 @@ $(document).ready(function () {
             //contentType: 'application/json; charset=UTF-8',
             data: reportRequestModel,
             datatype: "json",
-            success: function (data) {
-                //TODO
+            success: function (message) {
+                if (message.indexOf("Fail") > -1) {
+                    $(".notificationResponse").empty().prepend("<div class='text-danger'>"+message+"</div>");
+                } else {
+                    $(".notificationResponse").empty().prepend("<div class='text-success'>" + message + "</div>");
+                    //Reset the form
+                    $('#notificationForm')[0].reset.click();
+                }
+                
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //Article.progress().hideLoading();
-                alert("Error: " + error);
+                $(".notificationResponse").empty().prepend("<div class='text-danger'>" + textStatus + "</div>");
             }
         });
         return false;
