@@ -115,6 +115,21 @@ footer{ text-align: center;}
     padding-top: 3px !important;
 }
 
+.welcome-content p{
+    margin: 0 0 15px 0;
+}
+
+.login-box {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 530px;
+    float: right !important;
+    right: 0;
+    width: 360px;
+}
 /* generic styles */
 .center { margin: 0 auto;}
 .bold{ font-weight: bold !important;}
