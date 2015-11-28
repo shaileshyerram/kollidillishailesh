@@ -48,10 +48,19 @@ namespace TestMVC001.Models
 
     public class LoginViewModel
     {
+        
+        //[Required]
+        //[Display(Name = "Email")]
+        //[EmailAddress]
+        //public string Email { get; set; }
+
+        /*Shailesh : new*/
+        //TODO which field to use
         [Required]
-        [Display(Name = "Email Address")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "User Name")]
+        //[EmailAddress]
+        [StringLength(255, MinimumLength = 2)]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

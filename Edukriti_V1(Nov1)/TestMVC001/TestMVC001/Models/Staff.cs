@@ -11,19 +11,55 @@ namespace TestMVC001.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Staff
     {
         public long StaffId { get; set; }
+
+        [Required]
+        [Display(Name = "First Name")]
+        [StringLength(255, MinimumLength = 2)]
         public string FirstName { get; set; }
+
+        [Display(Name = "Middle Name")]
+        [StringLength(255, MinimumLength = 2)]
         public string MiddleName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        [StringLength(255, MinimumLength = 2)]
         public string LastName { get; set; }
+
+        [Required]
+        [StringLength(1)]
         public string Gender { get; set; }
+
+        [DataType(DataType.Date)]
+        [Display(Name = "Date Of Birth")]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
+
+        [Required]
+        [Display(Name = "Phone #")]
+        [DataType(DataType.PhoneNumber)]
         public Nullable<double> PhoneNumber { get; set; }
         public string EmailId { get; set; }
+
+        [Required]
+        [Display(Name = "RFID #")]
+        [RegularExpression(@"\d{6,20}")]
         public string RFID { get; set; }
+
+        [Required]
+        [RegularExpression(@"\d{4,20}")]
         public string ORGID { get; set; }
+
+
         public string Dept { get; set; }
+
+        [Required]
+        [Display(Name = "User Name")]
+        [StringLength(255, MinimumLength = 2)]
+        public string UserName { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using PagedList;
 using System.Web.Mvc;
 
 namespace TestMVC001.Models
@@ -13,11 +14,11 @@ namespace TestMVC001.Models
     {
         private DB_95608_edukritiEntities db = new DB_95608_edukritiEntities();
 
-        // GET: Staffs
-        public ActionResult Index()
-        {
-            return View(db.Staffs.ToList());
-        }
+        //// GET: Staffs
+        //public ActionResult Index()
+        //{
+        //    return View(db.Staffs.ToList());
+        //}
 
         // GET: Staffs/Details/5
         public ActionResult Details(long? id)
@@ -121,6 +122,60 @@ namespace TestMVC001.Models
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ViewResult Index(string sortOrder, string currentSort, string currentFilter, string searchString, int? page)
+        {
+            // string currentSortOrder = currentSort;
+            ViewBag.CurrentSort = sortOrder;
+            //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            //return View(db.staffs.ToList());
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var staffs = from s in db.Staffs
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                staffs = staffs.Where(s => s.LastName.Contains(searchString) || s.FirstName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "FirstName":
+                    if (sortOrder.Equals(currentSort))
+                        staffs = staffs.OrderByDescending(s => s.FirstName);
+                    else
+                        staffs = staffs.OrderBy(s => s.FirstName);
+                    break;
+                case "LastName":
+                    if (sortOrder.Equals(currentSort))
+                        staffs = staffs.OrderByDescending(s => s.LastName);
+                    else
+                        staffs = staffs.OrderBy(s => s.LastName);
+                    break;
+                case "RFID":
+                    if (sortOrder.Equals(currentSort))
+                        staffs = staffs.OrderByDescending(s => s.RFID);
+                    else
+                        staffs = staffs.OrderBy(s => s.RFID);
+                    break;
+                default:  // Name ascending 
+                    staffs = staffs.OrderBy(s => s.FirstName);
+                    break;
+            }
+
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(staffs.ToPagedList(pageNumber, pageSize));
         }
     }
 }

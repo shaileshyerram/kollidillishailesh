@@ -14,7 +14,7 @@ namespace TestMVC001.Models
     {
         private DB_95608_edukritiEntities db = new DB_95608_edukritiEntities();
 
-        ////GET: Students
+        //// GET: Students
         //public ActionResult Index()
         //{
         //    return View(db.Students.ToList());
@@ -46,7 +46,7 @@ namespace TestMVC001.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "StudentId,StudentFirstName,StudentMiddleName,StudentLastName,Class,Section,Gender,DateOfBirth,RFID,ParentFirstName,ParentMiddleName,ParentLastName,ParentPrimaryPhoneNumber,ParentHomePhoneNumber,ParentEmailId,ORGID")] Student student)
+        public ActionResult Create([Bind(Include = "StudentId,StudentFirstName,StudentMiddleName,StudentLastName,Class,Section,Gender,DateOfBirth,RFID,ParentFirstName,ParentMiddleName,ParentLastName,ParentPrimaryPhoneNumber,ParentHomePhoneNumber,ParentEmailId,ORGID,UserName")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace TestMVC001.Models
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "StudentId,StudentFirstName,StudentMiddleName,StudentLastName,Class,Section,Gender,DateOfBirth,RFID,ParentFirstName,ParentMiddleName,ParentLastName,ParentPrimaryPhoneNumber,ParentHomePhoneNumber,ParentEmailId,ORGID")] Student student)
+        public ActionResult Edit([Bind(Include = "StudentId,StudentFirstName,StudentMiddleName,StudentLastName,Class,Section,Gender,DateOfBirth,RFID,ParentFirstName,ParentMiddleName,ParentLastName,ParentPrimaryPhoneNumber,ParentHomePhoneNumber,ParentEmailId,ORGID,UserName")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace TestMVC001.Models
 
         public ViewResult Index(string sortOrder, string currentSort, string currentFilter, string searchString, int? page)
         {
-           // string currentSortOrder = currentSort;
+            // string currentSortOrder = currentSort;
             ViewBag.CurrentSort = sortOrder;
             //ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             //ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";

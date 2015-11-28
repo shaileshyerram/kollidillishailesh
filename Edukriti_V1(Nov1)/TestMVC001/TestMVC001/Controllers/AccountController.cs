@@ -66,14 +66,20 @@ namespace TestMVC001.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl) 
         {
+            /*shailesh  : change validation to validate username instead of email*/
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
 
+
+            /*shailesh  : add a new method , to access usernname as parameter instead of email*/
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
+
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            /*shailehs commented to user username instead of email*/
+            //var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:

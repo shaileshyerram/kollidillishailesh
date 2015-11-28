@@ -82,34 +82,13 @@ namespace TestMVC001.Models
         [Required]
         [RegularExpression(@"\d{4,20}")]
         public string ORGID { get; set; }
+
+        [Required]
+        [Display(Name = "User Name")]
+        [StringLength(255, MinimumLength = 2)]
+        public string UserName { get; set; }
     }
 }
-
-//namespace TestMVC001.Models
-//{
-//    using System;
-//    using System.Collections.Generic;
-
-//    public partial class Student
-//    {
-//        public long StudentId { get; set; }
-//        public string StudentFirstName { get; set; }
-//        public string StudentMiddleName { get; set; }
-//        public string StudentLastName { get; set; }
-//        public string Class { get; set; }
-//        public string Section { get; set; }
-//        public string Gender { get; set; }
-//        public Nullable<System.DateTime> DateOfBirth { get; set; }
-//        public string RFID { get; set; }
-//        public string ParentFirstName { get; set; }
-//        public string ParentMiddleName { get; set; }
-//        public string ParentLastName { get; set; }
-//        public Nullable<double> ParentPrimaryPhoneNumber { get; set; }
-//        public Nullable<double> ParentHomePhoneNumber { get; set; }
-//        public string ParentEmailId { get; set; }
-//        public string ORGID { get; set; }
-//    }
-//}
 
 public enum Gender
 {
