@@ -13,3 +13,11 @@ C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\Te
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.exe
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.pdb
 C:\School\Project\Application\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.csprojResolveAssemblyReference.cache
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\TestMVC001.Core.exe.config
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\TestMVC001.Core.exe
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\TestMVC001.Core.pdb
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\bin\Debug\Newtonsoft.Json.xml
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.csprojResolveAssemblyReference.cache
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.exe
+C:\Dileep\Edupitol\Edukriti\kollidillishailesh\Edukriti_V1(Nov1)\TestMVC001\TestMVC001.Core\obj\Debug\TestMVC001.Core.pdb
