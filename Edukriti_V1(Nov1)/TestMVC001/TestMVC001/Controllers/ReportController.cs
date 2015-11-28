@@ -11,7 +11,11 @@ namespace TestMVC001.Controllers
     [Authorize(Roles = "Admin")]
     public class ReportController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Student()
+        {
+            return View();
+        }
+        public ActionResult Staff()
         {
             return View();
         }

@@ -4,7 +4,7 @@ $(document).ready(function () {
     $(".btnExport").click(function () {
         $(".reportDataTable").table2excel({
             exclude: ".noExl",
-            name: "AttendanceReport_"+d
+            name: "AttendanceReport_" + d
         });
     });
 
@@ -54,13 +54,14 @@ $(document).ready(function () {
         }
     });
     $(".report #submit").on('click', function () {
-        var reportRequestModel = 
+        var reportRequestModel =
             {
-                name : $("input[name='name']").val(),
-                studentclass : $("input[name='class']").val(),
+                name: $("input[name='name']").val(),
+                studentclass: $('#Class').val(),
                 section: $("input[name='section']").val(),
                 dtfrom: $("input[name='dateFrom']").val(),
-                dtto: $("input[name='dateTo']").val()
+                dtto: $("input[name='dateTo']").val(),
+                category: $('#Category').val()
             };
         //Article.progress().showLoading();
         $.ajax({
@@ -72,7 +73,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data && data.Rows && data.Rows.length > 0) {
                     var tab = $('<table class="reportDataTable" rules="all"></table>');
-                    
+
                     var thead = $('<thead></thead>');
                     var tcrow = $('<tr></tr>');
                     $.each(data.Columns, function (i, cell) {
@@ -80,21 +81,30 @@ $(document).ready(function () {
                     });
                     thead.append(tcrow);
                     tab.append(thead);
-                     $.each(data.Rows, function (j, row) {
-                         var trow = $('<tr></tr>');
-                         $.each(row.RowCells, function (k, cell) {
+                    $.each(data.Rows, function (j, row) {
+                        var trow = $('<tr></tr>');
+                        $.each(row.RowCells, function (k, cell) {
                             trow.append('<td class="rowCell ' + data.Columns[k] + '">' + cell + '</td>');
-                         });
-                         tab.append(trow);
-                     });
-                     $("tr:odd", tab).css('background-color', '#EAE9E9');
-                     $(".reportData").empty().prepend(tab);
-                     $(".btnExport").removeClass("hide").addClass("show");
+                        });
+                        tab.append(trow);
+                    });
+                    $("tr:odd", tab).css('background-color', '#EAE9E9');
+                    $(".reportData").empty().prepend(tab);
+                    $("#error").empty();
+                    $(".btnExport").removeClass("hide").addClass("show");
+                } else {
+                    $(".reportData").empty();
+                    $("#error").empty();
+                    $("<div class='text-danger alignCenter' id='error'>No records found. Please update the search criteria.</div>").insertAfter("#reportForm #buttons");
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //Article.progress().hideLoading();
-                alert("Error: " + error);
+                $(".reportData").empty();
+                $("<div class='text-danger alignCenter' id='error'>" +
+                    "<p>status code: " + jqXHR.status + "</p>" +
+                    "<p>errorThrown: " + errorThrown + "</p>" +
+                    "<p>jqXHR.responseText: " + jqXHR.responseText + "</p></div>").insertAfter("#reportForm #buttons");
             }
         });
         return false;
@@ -115,13 +125,13 @@ $(document).ready(function () {
             datatype: "json",
             success: function (message) {
                 if (message.indexOf("Fail") > -1) {
-                    $(".notificationResponse").empty().prepend("<div class='text-danger'>"+message+"</div>");
+                    $(".notificationResponse").empty().prepend("<div class='text-danger'>" + message + "</div>");
                 } else {
                     $(".notificationResponse").empty().prepend("<div class='text-success'>" + message + "</div>");
                     //Reset the form
                     $('#notificationForm')[0].reset.click();
                 }
-                
+
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 //Article.progress().hideLoading();
@@ -133,7 +143,7 @@ $(document).ready(function () {
 
 
     // added for new notification form
-    $("#message").keyup(function() {
+    $("#message").keyup(function () {
 
         var maxLength = 120;
         var length = $(this).val().length;
@@ -199,7 +209,7 @@ function getTodaysDate(val) {
         month = t.getMonth() + 1 - val;
     }
 
-    return (day + '-' + months[month-1] + '-' + year);
+    return (day + '-' + months[month - 1] + '-' + year);
 }
 
 

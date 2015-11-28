@@ -1,97 +1,37 @@
-﻿
-@{
-    ViewBag.Title = "Notification";    
+﻿@{
+    ViewBag.Title = "Notification";
 }
-<link href="@Url.Content("~/Content/Styles/SMSNotification.css")" rel="stylesheet" type="text/css"/>
+@*<link href="@Url.Content("~/Content/Styles/SMSNotification.css")" rel="stylesheet" type="text/css"/>*@
 
-<h2>Send Notification</h2>
-<br/>
+<br />
 
 <div class="notificationContent">
-    <div class="notificationResponse"></div>
-    <br />
-    <form id="notificationForm" class="form-horizontal" role="form">
-        <div class="form-group">
-            <label class="col-md-2 control-label" for="phoneNumber">Mobile number</label>
-            <div class="col-md-10">
-                <textarea rows="2" cols="75" name="phoneNumber" placeholder="Enter phone numbers separated by comma"></textarea>
-            </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">Send SMS</div>
+        <div class="panel-body">
+            <div class="notificationResponse"></div>
+            <br />
+            <form id="notificationForm" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="phoneNumber">Mobile number</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" rows="2" cols="75" name="phoneNumber" placeholder="Enter phone numbers separated by comma"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="message">Message</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" rows="10" cols="75" name="message"></textarea>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-5 col-md-10">
+                        <input type="submit" value="Submit" id="submit" class="btn btn-primary" data-url="@Url.Action("SendNotification", "Notification")">
+                        <input type="reset" value="Reset" id="reset" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label class="col-md-2 control-label" for="message">Message</label>
-            <div class="col-md-10">
-                <textarea rows="10" cols="75" name="message"></textarea>
-            </div>
-        </div>
-        <br/>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit" id="submit" class="btn btn-primary" data-url="@Url.Action("SendNotification", "Notification")">
-                <input type="reset" value="Reset" id="reset" class="btn btn-primary">
-            </div>
-        </div>
-        @*<div id="message-form">
-            <fieldset>
-                <header>
-                    <h3>Send your message!</h3>
-                </header>
-                <p>
-                    <textarea name="" id="message" placeholder="Your message goes here..."></textarea>
-                </p>
-                <footer>
-                    <p class="clearfix">
-                        <span id="message-characters">120 characters left.</span>
-                        <input type="submit" id="button-send" value="Submit" data-url="@Url.Action("SendNotification", "Notification")">
-                        <input type="reset" value="Reset" id="reset">
-                    </p>
-                </footer>
-            </fieldset>
-        </div>*@
-    </form>
-
+    </div>
 </div>
-
-@*<div id="message-form">
-    <form action="javascript:void(0);" method="POST">
-        <fieldset>
-            <header>
-                <h3>Send your message!</h3>
-            </header>
-            <p>
-                <textarea name="" id="message" placeholder="Your message goes here..."></textarea>
-            </p>
-            <footer>
-                <p class="clearfix">
-                    <span id="message-characters">120 characters left.</span>
-                    <input type="submit" id="button-send" value="Submit" data-url="@Url.Action("SendNotification", "Notification")">
-                    <input type="reset" value="Reset" id="reset" >
-                </p>
-            </footer>
-        </fieldset>
-    </form>
-</div*@> <!-- end message -->
-
-@*<div class="notificationContent">
-    <form id="notificationForm" class="form-horizontal" role="form">
-        <div class="form-group">
-            <label class="col-md-2 control-label" for="phoneNumber">Mobile number</label>
-            <div class="col-md-10">
-                <textarea rows="2" cols="75" name="phoneNumber" placeholder="Enter phone numbers separated by comma"></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-2 control-label" for="message">Message</label>
-            <div class="col-md-10">
-                <textarea rows="10" cols="75" name="message"></textarea>
-            </div>
-        </div>
-        <br/>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit" id="submit" class="btn btn-primary" data-url="@Url.Action("SendNotification", "Notification")">
-                <input type="reset" value="Reset" id="reset" class="btn btn-primary">
-            </div>
-        </div>
-    </form>
-</div>*@
-

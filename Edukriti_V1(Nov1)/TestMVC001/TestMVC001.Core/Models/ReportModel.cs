@@ -21,6 +21,9 @@ namespace TestMVC001.Core.Models
 
         [JsonProperty("dtto")]
         public DateTime DtTo { get; set; }
+
+        [JsonProperty("category")]
+        public string Category { get; set; }
     }
     
     public class ReportResponseModel
