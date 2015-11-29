@@ -77,7 +77,7 @@ $(document).ready(function () {
                     var thead = $('<thead></thead>');
                     var tcrow = $('<tr></tr>');
                     $.each(data.Columns, function (i, cell) {
-                        tcrow.append('<th class="columnCell">' + cell + '</th>');
+                        tcrow.append('<th class="columnCell ' + data.Columns[i] + '">' + cell + '</th>');
                     });
                     thead.append(tcrow);
                     tab.append(thead);
