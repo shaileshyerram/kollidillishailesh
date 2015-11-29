@@ -56,9 +56,9 @@ $(document).ready(function () {
     $(".report #submit").on('click', function () {
         var reportRequestModel =
             {
-                name: $("input[name='name']").val(),
+                name: $("input[name='Name']").val(),
                 studentclass: $('#Class').val(),
-                section: $("input[name='section']").val(),
+                section: $("input[name='Section']").val(),
                 dtfrom: $("input[name='dateFrom']").val(),
                 dtto: $("input[name='dateTo']").val(),
                 category: $('#Category').val()
@@ -169,25 +169,10 @@ $(document).ready(function () {
             $("#button-send").removeAttr("disabled");
         }
     });
+
+
+
 });
-
-//function getTodaysDate(val) {
-//    var t = new Date, day, month, year = t.getFullYear();
-//    if (t.getDate() < 10) {
-//        day = "0" + t.getDate();
-//    }
-//    else {
-//        day = t.getDate();
-//    }
-//    if ((t.getMonth() + 1) < 10) {
-//        month = "0" + (t.getMonth() + 1 - val);
-//    }
-//    else {
-//        month = t.getMonth() + 1 - val;
-//    }
-
-//    return (day + '/' + month + '/' + year);
-//}
 
 
 

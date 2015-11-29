@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TestMVC001.Core.Models;
 using TestMVC001.Core.Services;
+using System.Web.Security;
+using Microsoft.AspNet.Identity;
 
 namespace TestMVC001.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff,Student")]
     public class ReportController : Controller
     {
         public ActionResult Student()
@@ -24,7 +25,24 @@ namespace TestMVC001.Controllers
         public JsonResult GetReport(ReportRequestModel reportRequestModel)
         {
             var reportResponseModel = ReportService.GetAttendanceReport(reportRequestModel);
-            //return View("_ReportDataPartial", reportResponseModel);
+
+            //TODO pass ORgID to db
+            bool isAdmin = User.IsInRole("Admin");
+            var sessionUserName = User.Identity.GetUserName();
+            List<Row> filteredRows = new List<Row>();
+            if (User.IsInRole("Student") || ((User.IsInRole("Staff") && reportRequestModel.Category == "Staff")))
+            {                
+                //List<Row> filteredRows = (from row in reportResponseModel.Rows let rowUserName = row.RowCells[row.RowCells.Count - 1] where !String.IsNullOrEmpty(rowUserName) && !String.IsNullOrEmpty(sessionUserName) && (rowUserName.ToLower() == sessionUserName.ToLower()) select row).ToList();
+                foreach (var row in reportResponseModel.Rows)
+                {
+                    var rowUserName = row.RowCells[row.RowCells.Count - 1];
+                    if (!String.IsNullOrEmpty(rowUserName) && !String.IsNullOrEmpty(sessionUserName) && (rowUserName.ToLower() == sessionUserName.ToLower()))
+                    {
+                        filteredRows.Add(row);
+                    }
+                }
+                reportResponseModel.Rows = filteredRows;
+            }
             return new JsonResult { Data = reportResponseModel, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
         
