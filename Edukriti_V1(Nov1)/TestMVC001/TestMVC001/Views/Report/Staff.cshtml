@@ -1,18 +1,26 @@
-﻿@{
+﻿@using Microsoft.AspNet.Identity
+@{
     ViewBag.Title = "Report";
+    var isStaff = User.IsInRole("Staff");
 }
+
+
 <div class="report">
     <div class="panel panel-primary">
         <div class="panel-heading">Staff Attendance Report</div>
         <div class="panel-body">
             <form id="reportForm" class="form-horizontal" role="form">
-                <br />
-                <div class="form-group">
-                    <label class="col-md-2 control-label" for="Name">Name</label>
-                    <div class="col-md-8">
-                        <input class="form-control" id="Name" name="Name" type="text" value="">
+                <br/>
+
+                @if (!isStaff)
+                {
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="Name">Name</label>
+                        <div class="col-md-8">
+                            <input class="form-control" id="Name" name="Name" type="text" value="">
+                        </div>
                     </div>
-                </div>
+                }                
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="fromDatepicker">Date From</label>
                     <div class="col-md-3">

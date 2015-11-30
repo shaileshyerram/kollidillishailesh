@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace TestMVC001.Models
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "SysAdmin,Admin")]
     public class StaffsController : Controller
     {
         private DB_95608_edukritiEntities db = new DB_95608_edukritiEntities();

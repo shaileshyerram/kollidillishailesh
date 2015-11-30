@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 
 namespace TestMVC001.Controllers
 {
-    [Authorize(Roles = "Admin,Staff,Student")]
+    [Authorize(Roles = "SysAdmin,Admin,Staff,Student")]
     public class ReportController : Controller
     {
         public ActionResult Student()

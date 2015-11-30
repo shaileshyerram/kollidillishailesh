@@ -4,143 +4,146 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="editContent">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Student details</div>
+        <div class="panel-body">
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.StudentFirstName)
+                    </dt>
 
-<div>
-    <h4>Student</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentFirstName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.StudentFirstName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudentFirstName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.StudentMiddleName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentMiddleName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.StudentMiddleName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudentMiddleName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.StudentLastName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentLastName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.StudentLastName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.StudentLastName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Class)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Class)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Class)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Class)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Section)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Section)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Section)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Section)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Gender)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Gender)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DateOfBirth)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DateOfBirth)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateOfBirth)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.RFID)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RFID)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.RFID)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.RFID)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParentFirstName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentFirstName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ParentFirstName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentFirstName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParentMiddleName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentMiddleName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ParentMiddleName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentMiddleName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParentLastName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentLastName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ParentLastName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentLastName)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParentPrimaryPhoneNumber)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentPrimaryPhoneNumber)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ParentPrimaryPhoneNumber)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentPrimaryPhoneNumber)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParentHomePhoneNumber)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentHomePhoneNumber)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ParentHomePhoneNumber)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentHomePhoneNumber)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ParentEmailId)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ParentEmailId)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ParentEmailId)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ParentEmailId)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ORGID)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ORGID)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ORGID)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ORGID)
-        </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UserName)
+                    </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.UserName)
+                    </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
-
-    </dl>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

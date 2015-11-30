@@ -35,7 +35,7 @@ namespace TestMVC001.Models
         [StringLength(1)]
         public string Gender { get; set; }
 
-        [DataType(DataType.Date)]
+        //[DataType(DataType.Date)]
         [Display(Name = "Date Of Birth")]
         public Nullable<System.DateTime> DateOfBirth { get; set; }
 
