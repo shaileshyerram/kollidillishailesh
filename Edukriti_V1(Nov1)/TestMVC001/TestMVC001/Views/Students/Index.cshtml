@@ -6,11 +6,8 @@
 @{
     ViewBag.Title = "Students";
 }
-
-<h2>Students</h2>
-
 <p class="bold underline">
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Student", "Create")
 </p>
 
 @using (Html.BeginForm("Index", "Students", FormMethod.Get))

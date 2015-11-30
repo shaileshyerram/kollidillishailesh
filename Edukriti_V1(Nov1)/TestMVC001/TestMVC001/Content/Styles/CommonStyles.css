@@ -95,7 +95,6 @@ th { text-align: center !important;}
 
 /* Overwrite bootstrap stsyles*/
 .control-label {
-        font-size: 16px !important;
     font-weight: normal !important;
 }
 
@@ -110,6 +109,7 @@ th { text-align: center !important;}
 .panel-heading { padding: 5px 15px !important;}
 
 .alignCenter{ text-align: center !important;}
+.contactUsContent{ width: 40% !important; margin: 0 auto !important; }
 .notificationContent { width: 75% !important; margin: 0 auto !important; }
 
 .boxesContainer a{ color: #ffffff !important;}

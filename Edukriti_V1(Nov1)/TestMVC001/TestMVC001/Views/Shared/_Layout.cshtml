@@ -73,7 +73,9 @@
                             </li>
                         }
                         if (isAdmin || isStaff)
+                        {
                             <li>@Html.ActionLink("Send SMS", "Index", "Notification")</li>
+                        }
                     }
                     <li>@Html.ActionLink("Contact Us", "Contact", "Welcome")</li>
                 </ul>
