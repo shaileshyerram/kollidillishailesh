@@ -22,7 +22,7 @@ th { text-align: center !important;}
 .btnExport { margin: 0 auto;}
 
 /*Home page styles*/
-.home{ overflow:hidden; padding:35px 0;}
+.home{ overflow:hidden; padding:35px 0;margin: 0 auto;width: 80%;}
 .boxes{ overflow:hidden; width:908px; height:450px; margin: 0 auto; position:relative;}
 
 /*Notification page styles*/
@@ -49,31 +49,36 @@ th { text-align: center !important;}
     float: left;
 }
 
+.homeBtn {
+    clear:left; width: 265px; height: 155px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    /*display: -webkit-box;*/      /* OLD - iOS 6-, Safari 3.1-6 */
+    /*display: -moz-box;*/          /* OLD - Firefox 19- (buggy but mostly works) */
+    /*display: -ms-flexbox; */      /* TWEENER - IE 10 */
+    /*display: -webkit-flex; */     /* NEW - Chrome */
+    /*display: flex;*/              /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
 #btn1{
 	background:#819BC1;
     border-color:#819BC1;
-    min-width: 100%;
-    clear:left; width: 265px; height: 265px;
 }
 #btn2{
 	background:#FF9A33;
     border-color:#FF9A33;
-    height: 168px;
-    min-width: 100%;
-    clear:left; width: 265px; height: 265px;
 }
 
 #btn3{
 	background:#19A92A;
 	border-color:#19A92A;
-    height: 168px;
-    min-width: 100%;
-    clear:left; width: 265px; height: 265px;
 }
 
-.outerBox{margin: 5px;}
+.outerBox{margin: 15px;}
 .boxImg {width: 265px;
-    height: 185px;
+    height: 210px;
     float: left;}
 .box1Img {
     background: url('../img/attendance.png') no-repeat 0 0;

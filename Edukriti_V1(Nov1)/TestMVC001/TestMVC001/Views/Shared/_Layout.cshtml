@@ -1,4 +1,9 @@
 ﻿@using Microsoft.AspNet.Identity
+@{
+    var isAdmin = User.IsInRole("Admin");
+    var isStaff = User.IsInRole("Staff");
+    var isStudent = User.IsInRole("Student");
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,27 +42,38 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (Request.IsAuthenticated)
                     {
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                Reports
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Student", "Student", "Report")</li>
-                                <li>@Html.ActionLink("Staff", "Staff", "Report")</li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                Manage
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>@Html.ActionLink("Students", "Index", "Students")</li>
-                                <li>@Html.ActionLink("Staff", "Index", "Staffs")</li>
-                            </ul>
-                        </li>
-                        <li>@Html.ActionLink("Send SMS", "Index", "Notification")</li>
+                        if (isAdmin || isStaff)
+                        {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Reports
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Student", "Student", "Report")</li>
+                                    <li>@Html.ActionLink("Staff", "Staff", "Report")</li>
+                                </ul>
+                            </li>
+                        }
+                        else if (isStudent)
+                        {
+                            <li>@Html.ActionLink("Reports", "Student", "Report")</li>
+                        }
+                        if (isAdmin)
+                        {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    Manage
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Students", "Index", "Students")</li>
+                                    <li>@Html.ActionLink("Staff", "Index", "Staffs")</li>
+                                </ul>
+                            </li>
+                        }
+                        if (isAdmin || isStaff)
+                            <li>@Html.ActionLink("Send SMS", "Index", "Notification")</li>
                     }
                     <li>@Html.ActionLink("Contact Us", "Contact", "Welcome")</li>
                 </ul>

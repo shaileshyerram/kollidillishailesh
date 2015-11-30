@@ -27,9 +27,8 @@ namespace TestMVC001.Controllers
             var reportResponseModel = ReportService.GetAttendanceReport(reportRequestModel);
 
             //TODO pass ORgID to db
-            bool isAdmin = User.IsInRole("Admin");
             var sessionUserName = User.Identity.GetUserName();
-            List<Row> filteredRows = new List<Row>();
+            var filteredRows = new List<Row>();
             if (User.IsInRole("Student") || ((User.IsInRole("Staff") && reportRequestModel.Category == "Staff")))
             {                
                 //List<Row> filteredRows = (from row in reportResponseModel.Rows let rowUserName = row.RowCells[row.RowCells.Count - 1] where !String.IsNullOrEmpty(rowUserName) && !String.IsNullOrEmpty(sessionUserName) && (rowUserName.ToLower() == sessionUserName.ToLower()) select row).ToList();
