@@ -1,6 +1,5 @@
 ﻿
 body {
-    /*text-align: center;*/
     background-color: #F5FBFB !important;
     display: block !important;
 }
@@ -11,15 +10,11 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 #submit{ margin-right: 18px;}
 .searchLabel { font-weight: bold;}
 .reportDataTable{border: solid 1px #cccccc;margin-left: auto;margin-right: auto;width: 95%;}
-/*.rowCell{border: solid 1px #cccccc;}*/
 .reportDataTable >thead {background-color: #428bca;color: #ffffff;font-size: 15px;}
-/*.reportDataTable >tbody >tr >td.Name, .reportDataTable >tbody >tr >td.Category,.reportDataTable >tbody >tr >td.Class,
-.reportDataTable >tbody >tr >td.Section,
-.reportDataTable >tbody >tr >td.RFID,
-.reportDataTable >tbody >tr >td.Gender { text-align: left;padding-left: 20px;}*/
 .rowCell { text-align: left !important;padding-left: 20px !important;}
 .reportDataTable >thead >tr >th.UserName, .reportDataTable >tbody >tr >td.UserName { display: none !important;}
 th { text-align: center !important;}
+
 /*Datepicker customize styles */
 .ui-state-disabled { background-color: white;}
 .show { display: block;}
@@ -48,7 +43,7 @@ th { text-align: center !important;}
     line-height:30px;
     /*padding-left:10px;*/
 	text-align:center;
-    display: inline-flex;
+    /*display: inline-flex;*/
     justify-content: center;
     align-items: center;
     float: left;
@@ -57,35 +52,43 @@ th { text-align: center !important;}
 #btn1{
 	background:#819BC1;
     border-color:#819BC1;
-    top: 110px;
-    height: 168px;
     min-width: 100%;
+    clear:left; width: 265px; height: 265px;
 }
 #btn2{
 	background:#FF9A33;
     border-color:#FF9A33;
-    top: 110px;
     height: 168px;
     min-width: 100%;
+    clear:left; width: 265px; height: 265px;
 }
 
 #btn3{
 	background:#19A92A;
 	border-color:#19A92A;
-    top: 110px;
     height: 168px;
     min-width: 100%;
+    clear:left; width: 265px; height: 265px;
 }
 
 .outerBox{margin: 5px;}
-.box1Img{ background: url('../img/attendance.png') no-repeat 0 0;min-width: 100%;height: 210px;background-size: contain;position: absolute;left: 0;}
-.box2Img{background: url('../img/Students.png') no-repeat 0 0;min-width: 100%;height: 210px;background-size: contain;position: absolute;left: 0;}
-.box3Img{background: url('../img/sms2.jpg') no-repeat 0 0;min-width: 100%;height: 210px;background-size: contain;position: absolute;left: 0;}
-/* Overwrite bootstrap stsyles*/
-/*.form-control {
-    width: 50% !important;
-}*/
+.boxImg {width: 265px;
+    height: 185px;
+    float: left;}
+.box1Img {
+    background: url('../img/attendance.png') no-repeat 0 0;
+    background-color: #819BC1;
+}
+.box2Img {
+    background: url('../img/Students.png') no-repeat 0 0;
+    background-color: #FF9A33;
+}
+.box3Img{
+    background: url('../img/sms2.jpg') no-repeat 0 0;
+    background-color: #19A92A;
+}
 
+/* Overwrite bootstrap stsyles*/
 .control-label {
         font-size: 16px !important;
     font-weight: normal !important;
