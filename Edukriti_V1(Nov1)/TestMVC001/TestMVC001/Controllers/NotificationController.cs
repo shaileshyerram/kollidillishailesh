@@ -12,7 +12,7 @@ using TestMVC001.Models;
 
 namespace TestMVC001.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Staff")]
     public class NotificationController : Controller
     {
         // GET: Notification

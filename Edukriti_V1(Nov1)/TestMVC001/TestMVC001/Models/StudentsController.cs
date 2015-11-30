@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace TestMVC001.Models
 {
+    [Authorize(Roles = "Admin")]
     public class StudentsController : Controller
     {
         private DB_95608_edukritiEntities db = new DB_95608_edukritiEntities();
