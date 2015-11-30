@@ -6,6 +6,7 @@
 @{
     ViewBag.Title = "Students";
 }
+<hr />
 <p class="bold underline">
     @Html.ActionLink("Add New Student", "Create")
 </p>
@@ -19,7 +20,7 @@
 }
 
 
-<table class="table studentTable" rules="all">
+<table class="table manageTable" rules="all">
     <tr>
         <th>
             @Html.ActionLink("First Name", "Index", new { sortOrder = "FirstName", currentSort = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter })

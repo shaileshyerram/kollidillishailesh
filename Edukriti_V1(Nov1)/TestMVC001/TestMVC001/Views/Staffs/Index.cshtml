@@ -3,10 +3,11 @@
 @{
     ViewBag.Title = "Index";
 }
-<p>
+<hr />
+<p class="bold underline">
     @Html.ActionLink("Add New Staff", "Create")
 </p>
-<table class="table">
+<table class="table manageTable" rules="all">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -38,7 +39,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Dept)
         </th>
-        <th></th>
+        <th width="15%" class="action">
+            @Html.DisplayName("Action")
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -73,10 +76,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.Dept)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StaffId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StaffId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StaffId })
+        <td width="15%" class="action">
+            @Html.ActionLink("Edit", "Edit", new { id = item.StaffId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StaffId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StaffId })
         </td>
     </tr>
 }
