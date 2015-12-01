@@ -127,7 +127,7 @@ $(document).ready(function () {
                 if (message.indexOf("Fail") > -1) {
                     $(".notificationResponse").empty().prepend("<div class='text-danger'>" + message + "</div>");
                 } else {
-                    $(".notificationResponse").empty().prepend("<div class='text-success'>" + message + "</div>");
+                    $(".notificationResponse").empty().prepend("<div class='text-success bold'>Message sent successfully.</div>");
                     //Reset the form
                     $('#notificationForm')[0].reset.click();
                 }

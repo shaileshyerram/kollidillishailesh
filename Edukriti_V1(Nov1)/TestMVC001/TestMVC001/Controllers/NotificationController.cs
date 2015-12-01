@@ -37,7 +37,7 @@ namespace TestMVC001.Controllers
             }
             var smsResponseModel = SendSmsService.SendNotification(model.ToPhoneNumber, model.Message);
             AttendanceService.InsertSmsResponse(smsResponseModel);
-            return new JsonResult { Data = smsResponseModel.Response, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            return new JsonResult { Data = smsResponseModel, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
 
     }

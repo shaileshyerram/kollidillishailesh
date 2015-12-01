@@ -7,5 +7,6 @@ namespace TestMVC001.Core.Models
     {
         public string Response;
         public string SmsUrl;
+        public string Status;
     }
 }

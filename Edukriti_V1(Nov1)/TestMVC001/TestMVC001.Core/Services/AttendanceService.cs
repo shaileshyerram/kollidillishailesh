@@ -50,6 +50,7 @@ namespace TestMVC001.Core.Services
         {
             using (var con = new SqlConnection(ConnectionString))
             {
+                
                 //Store the SMS result in the database
                 con.Open();
                 var cmnd2 = new SqlCommand("InsertSMSResponse", con)
@@ -58,10 +59,14 @@ namespace TestMVC001.Core.Services
                 };
                 cmnd2.Parameters.AddWithValue("@smsUrl", smsResponseModel.SmsUrl);
                 cmnd2.Parameters.AddWithValue("@response", smsResponseModel.Response);
-                cmnd2.Parameters.AddWithValue("@status", smsResponseModel.Response.Substring(0, smsResponseModel.Response.IndexOf(':') - 1));
+                // cmnd2.Parameters.AddWithValue("@status", smsResponseModel.Response.Substring(0, smsResponseModel.Response.IndexOf(':') - 1));
+                cmnd2.Parameters.AddWithValue("@status", smsResponseModel.Status);
                 cmnd2.ExecuteNonQuery();
                 con.Close();
             }
         }
+       
     }
+    
 }
+

@@ -17,28 +17,50 @@ namespace TestMVC001.Core.Services
         {
             string subMsg = responseModel.IsInTime ? " has entered the campus at " : " has left the campus at ";
             var msg = string.Format("{0}{1}{2}", responseModel.StudentName, subMsg, dtAttendance);
-            string smsUrl = String.Format("{0}&mobileno={1}&msg={2}",
-                //WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], responseModel.PhoneNumber, msg);
-                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], "9063713741", msg);
+            /*string smsUrl = String.Format("{0}&mobileno={1}&msg={2}",
+                //WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], responseModel.PhoneNumber, msg);*/
+            string smsUrl = String.Format("{0}&from={1}&to={2}&msg={3}",
+                //WebConfigurationManager.AppSettings["BulkSMSBaseUrl"],"EduKriti", responseModel.PhoneNumber, msg);
+                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"],"EduKriti", "9063713741", msg);
             var client = new WebClient();
             var response = client.DownloadString(smsUrl);
+            var status = "Failure";
+            if (!string.IsNullOrEmpty(response) && response.IsNumeric())
+            {
+                status = "Success";
+            }
             return new SmsResponseModel
             {
                 Response = response,
-                SmsUrl = smsUrl
+                SmsUrl = smsUrl,
+                Status = status
             };
         }
         public static SmsResponseModel SendNotification(string phoneNumber, string message)
         {
-            string smsUrl = String.Format("{0}&mobileno={1}&msg={2}",
-                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], phoneNumber, message);
+            string smsUrl = String.Format("{0}&from={1}&to={2}&msg={3}",
+                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], "EduKriti", phoneNumber, message);
             var client = new WebClient();
             var response = client.DownloadString(smsUrl);
+            var status = "Failure";
+            if (!string.IsNullOrEmpty(response) && response.IsNumeric())
+            {
+                status = "Success";
+            }
             return new SmsResponseModel
             {
                 Response = response,
-                SmsUrl = smsUrl
+                SmsUrl = smsUrl,
+                Status = status
             };
+        }
+    }
+    public static class Extension
+    {
+        public static bool IsNumeric(this string s)
+        {
+            float output;
+            return float.TryParse(s, out output);
         }
     }
 }
