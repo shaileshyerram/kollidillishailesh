@@ -14,6 +14,7 @@ h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0
 .rowCell { text-align: left !important;padding-left: 20px !important;}
 .reportDataTable >thead >tr >th.UserName, .reportDataTable >tbody >tr >td.UserName { display: none !important;}
 th { text-align: center !important;}
+table >tbody >tr { height: 100% !important;}
 
 /*Datepicker customize styles */
 .ui-state-disabled { background-color: white;}
@@ -98,6 +99,7 @@ th { text-align: center !important;}
     font-weight: normal !important;
 }
 
+/*.form-control{ height: 100% !important;}*/
 #loginForm .form-control {
     width: 100% !important;
 }
