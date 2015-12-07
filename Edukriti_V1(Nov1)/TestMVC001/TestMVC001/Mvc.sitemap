@@ -5,23 +5,40 @@
 
   <mvcSiteMapNode title="Home" controller="Home" action="Index">
 
-    <mvcSiteMapNode title="Attendance Report" controller="Report" action="Index" />
+    <mvcSiteMapNode title="Student Attendance Report" controller="Report" action="Student" />
+    
+    <mvcSiteMapNode title="Staff Attendance Report" controller="Report" action="Staff" />
+            
     <mvcSiteMapNode title="Manage Students" controller="Students" action="Index">
-        <mvcSiteMapNode title="Create" controller="Students" action="Create" />
+      
+        <mvcSiteMapNode title="Add new student" controller="Students" action="Create" />
 
         <mvcSiteMapNode title="Delete" controller="Students" action="Delete" preservedRouteParameters="id"/>
     
-        <mvcSiteMapNode title="Details" controller="Students" action="Details" preservedRouteParameters="id" />
+        <mvcSiteMapNode title="Student details" controller="Students" action="Details" preservedRouteParameters="id" />
     
-        <mvcSiteMapNode title="Edit" controller="Students" action="Edit" preservedRouteParameters="id"/>    
+        <mvcSiteMapNode title="Edit student details" controller="Students" action="Edit" preservedRouteParameters="id"/>    
 
     </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Manage Staff" controller="Staffs" action="Index">
+
+      <mvcSiteMapNode title="Add new staff" controller="Staffs" action="Create" />
+
+      <mvcSiteMapNode title="Delete" controller="Staffs" action="Delete" preservedRouteParameters="id"/>
+
+      <mvcSiteMapNode title="Staff details" controller="Staffs" action="Details" preservedRouteParameters="id" />
+
+      <mvcSiteMapNode title="Edit staff details" controller="Staffs" action="Edit" preservedRouteParameters="id"/>
+
+    </mvcSiteMapNode>
+    
                        
-    <mvcSiteMapNode title="Send Notifications" controller="Notification" action="Index" />      
+    <mvcSiteMapNode title="Send SMS" controller="Notification" action="Index" />      
     
     <mvcSiteMapNode title="About" controller="Home" action="About" />
     
-    <mvcSiteMapNode title="Contact" controller="Home" action="Contact" />
+    <mvcSiteMapNode title="Contact" controller="Welcome" action="Contact" />
     
   </mvcSiteMapNode>
   
