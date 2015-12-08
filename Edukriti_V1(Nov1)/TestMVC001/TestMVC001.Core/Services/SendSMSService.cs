@@ -21,7 +21,7 @@ namespace TestMVC001.Core.Services
                 //WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], responseModel.PhoneNumber, msg);*/
             string smsUrl = String.Format("{0}&from={1}&to={2}&msg={3}",
                 //WebConfigurationManager.AppSettings["BulkSMSBaseUrl"],"EduKriti", responseModel.PhoneNumber, msg);
-                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"],"EduKriti", "9063713741", msg);
+                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], "SCHOOL", "9063713741", msg);
             var client = new WebClient();
             var response = client.DownloadString(smsUrl);
             var status = "Failure";
@@ -38,8 +38,10 @@ namespace TestMVC001.Core.Services
         }
         public static SmsResponseModel SendNotification(string phoneNumber, string message)
         {
-            string smsUrl = String.Format("{0}&from={1}&to={2}&msg={3}",
-                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], "EduKriti", phoneNumber, message);
+            string smsUrl = String.Format("{0}&from={1}&to={2}&msg={3}",WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], "SCHOOL", phoneNumber, message);
+
+            //string smsUrl = String.Format("{0}&from={1}&to={2}&msg={3}", "http://trans.rishiitsolutions.com/API/sms.php?username=javeed&password=javeed@1234&type=1&dnd_check=0", "SCHOOL", phoneNumber, message);
+
             var client = new WebClient();
             var response = client.DownloadString(smsUrl);
             var status = "Failure";
