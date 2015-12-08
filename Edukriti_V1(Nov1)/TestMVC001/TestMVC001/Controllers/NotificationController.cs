@@ -22,7 +22,7 @@ namespace TestMVC001.Controllers
         }
 
         [Route("sendnotification")]
-        public JsonResult SendNotification(NotificationModel model)
+        public ContentResult SendNotification(NotificationModel model)
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["myConnectionString"].ToString();
             String NotificationSender = "School Admin";
@@ -37,7 +37,17 @@ namespace TestMVC001.Controllers
             }
             var smsResponseModel = SendSmsService.SendNotification(model.ToPhoneNumber, model.Message);
             AttendanceService.InsertSmsResponse(smsResponseModel);
-            return new JsonResult { Data = smsResponseModel, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            //return new JsonResult { Data = smsResponseModel, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+            if (smsResponseModel.Status == "Success")
+            {
+                return Content("Message Sent!");
+            }
+            else
+            {
+                return Content(smsResponseModel.Status);
+            }
+
         }
 
     }
