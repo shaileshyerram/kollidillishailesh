@@ -83,7 +83,7 @@ namespace TestMVC001.Controllers
                             var attendanceResponseModel = AttendanceService.InsertOrUpdateAttendanceRecord(requestModel);
 
                             //Sending SMS using Bulk Service
-                            if (!String.IsNullOrEmpty(attendanceResponseModel.PhoneNumber))
+                            if (!String.IsNullOrEmpty(attendanceResponseModel.PhoneNumber) && attendanceResponseModel.IsInTime)
                             {
                                 var smsResponseModel = SendSmsService.SendSms(attendanceResponseModel, requestModel.DtAttendance);
                                 AttendanceService.InsertSmsResponse(smsResponseModel);
