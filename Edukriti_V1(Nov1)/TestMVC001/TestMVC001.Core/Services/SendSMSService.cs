@@ -56,6 +56,33 @@ namespace TestMVC001.Core.Services
                 Status = status
             };
         }
+
+        public static SmsResponseModel SendSmsDailyReport(ReportResponseModelWithContacts reportResponseModelWithContacts)
+        {
+
+            //msg = "Sravani Janapally Date : 11 Dec 2015 In Time : 8:26: AM Out Time : 3:08: PM"
+            var msg = string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}", reportResponseModelWithContacts.Name,"'s Attendance for", " Date : ", reportResponseModelWithContacts.AttendanceDate, ",",
+                " In Time : ", reportResponseModelWithContacts.InTime, 
+                ",",
+                " Out Time : ", reportResponseModelWithContacts.OutTime);
+
+            string smsUrl = String.Format("{0}&from={1}&to={2}&msg={3}",
+                WebConfigurationManager.AppSettings["BulkSMSBaseUrl"], "SCHOOL", "9063713741", msg);
+            var client = new WebClient();
+            var response = client.DownloadString(smsUrl);
+            var status = "Failure";
+            if (!string.IsNullOrEmpty(response) && response.IsNumeric())
+            {
+                status = "Success";
+            }
+            return new SmsResponseModel
+            {
+                Response = response,
+                SmsUrl = smsUrl,
+                Status = status
+            };
+
+        }
     }
     public static class Extension
     {
@@ -65,4 +92,6 @@ namespace TestMVC001.Core.Services
             return float.TryParse(s, out output);
         }
     }
+
+
 }

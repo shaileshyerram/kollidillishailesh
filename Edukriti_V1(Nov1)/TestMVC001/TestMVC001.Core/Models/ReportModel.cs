@@ -36,4 +36,20 @@ namespace TestMVC001.Core.Models
     {
         public List<string> RowCells;
     }
+
+    public class ReportResponseModelWithContacts
+    {
+        public string Name;
+        public string Class;
+        public string Section;
+        public string Gender;
+        public string RFID;
+        public string AttendanceDate;
+        public string InTime;
+        public string OutTime;
+        public string Duration;
+        public string UserName;
+        public string PhoneNumber;
+    }
+
 }
