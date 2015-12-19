@@ -18,6 +18,7 @@ namespace TestMVC001.Controllers
         // GET: Notification
         public ActionResult Index()
         {
+            GetGroups();
             return View();
         }
 
@@ -30,7 +31,7 @@ namespace TestMVC001.Controllers
             using (var con = new SqlConnection(connectionString))
             {
                 con.Open();
-                string query = "INSERT INTO[dbo].[tblNotification] ([PhoneNumber],[Sender],[Message],[Category]) VALUES('" + model.ToPhoneNumber + "', '" + NotificationSender + "',  '" + model.Message + "',   '" + NotificationCategory + "') ";
+                string query = "INSERT INTO [dbo].[tblNotification] ([PhoneNumber],[Sender],[Message],[Category]) VALUES('" + model.ToPhoneNumber + "', '" + NotificationSender + "',  '" + model.Message + "',   '" + NotificationCategory + "') ";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -47,7 +48,11 @@ namespace TestMVC001.Controllers
             {
                 return Content(smsResponseModel.Status);
             }
+        }
 
+        public void GetGroups()
+        {
+            var a = NotificationService.GetSMSTree("97005");  //TODO
         }
 
     }

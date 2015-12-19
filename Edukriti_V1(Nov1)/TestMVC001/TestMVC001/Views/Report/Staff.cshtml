@@ -6,7 +6,7 @@
 
 
 <div class="report">
-    <div class="panel panel-primary">
+    <div class="panel panel-success">
         <div class="panel-heading">Staff Attendance Report</div>
         <div class="panel-body">
             <form id="reportForm" class="form-horizontal" role="form">
@@ -33,8 +33,8 @@
                 </div>
                 <div class="form-group" id="buttons">
                     <div class="col-md-offset-4 col-md-10">
-                        <input type="submit" value="Submit" id="submit" class="btn btn-primary center" data-url="@Url.Action("GetReport", "Report")">
-                        <input type="reset" value="Reset" id="reset" class="btn btn-primary center">
+                        <input type="submit" value="Submit" id="submit" class="btn btn-success center" data-url="@Url.Action("GetReport", "Report")">
+                        <input type="reset" value="Reset" id="reset" class="btn btn-success center">
                     </div>
                 </div>
             </form>
@@ -43,6 +43,6 @@
     <br />
     <div class="reportData"></div>
     <br />
-    <button class="btnExport hide btn btn-primary">Export to excel</button>
+    <button class="btnExport hide btn btn-success">Export to excel</button>
     <input type="hidden" value="Staff" id="Category" />
 </div>

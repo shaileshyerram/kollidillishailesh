@@ -20,18 +20,28 @@
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.table2excel.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/Attendance/Report.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/css3-mediaqueries.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancytree.js")"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="@Url.Content("~/Content/Styles/CommonStyles.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Styles/normalize.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Styles/datepicker.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/Styles/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Styles/fancytree.css")" rel="stylesheet" type="text/css" />
+    @*<link href="@Url.Content("~/Content/Fonts/Montserrat-Black.otf")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/Montserrat-Bold.otf")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/Montserrat-ExtraBold.otf")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/Montserrat-Hairline.otf")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/Montserrat-Light.otf")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/Montserrat-Regular.otf")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/Montserrat-SemiBold.otf")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Fonts/Montserrat-UltraLight.otf")" rel="stylesheet" type="text/css" />*@
 
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle mobile" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -40,12 +50,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li><span class="glyphicon glyphicon-home"></span>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (Request.IsAuthenticated)
                     {
                         if (isAdmin || isStaff)
                         {
-                            <li class="dropdown">
+                            <li class="dropdown"><span class="glyphicon glyphicon-th-list"></span>
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     Reports
                                     <span class="caret"></span>
@@ -58,11 +68,11 @@
                         }
                         else if (isStudent)
                         {
-                            <li>@Html.ActionLink("Reports", "Student", "Report")</li>
+                            <li><span class="glyphicon glyphicon-th-list"></span>@Html.ActionLink("Reports", "Student", "Report")</li>
                         }
                         if (isAdmin)
                         {
-                            <li class="dropdown">
+                            <li class="dropdown"><span class="glyphicon glyphicon-pencil"></span>
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                     Manage
                                     <span class="caret"></span>
@@ -75,10 +85,10 @@
                         }
                         if (isAdmin || isStaff)
                         {
-                            <li>@Html.ActionLink("Send SMS", "Index", "Notification")</li>
+                            <li><span class="glyphicon glyphicon-envelope"></span>@Html.ActionLink("Send SMS", "Index", "Notification")</li>
                         }
                     }
-                    <li>@Html.ActionLink("Contact Us", "Contact", "Welcome")</li>
+                    <li><span class="glyphicon glyphicon-phone-alt"></span>@Html.ActionLink("Contact Us", "Contact", "Welcome")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -87,12 +97,12 @@
     <div class="container body-content">
         @Html.MvcSiteMap().SiteMapPath()
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year Edukriti. All rights reserved.</p>
-        </footer>
+        
     </div>
-
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year Edukriti. All rights reserved.</p>
+    </footer>
 
     @RenderSection("scripts", required: false)
 </body>

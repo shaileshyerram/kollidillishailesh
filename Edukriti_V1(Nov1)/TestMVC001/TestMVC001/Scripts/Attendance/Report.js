@@ -1,5 +1,25 @@
 ﻿
 $(document).ready(function () {
+    var groupManagerContainer = $(".treeContainer");
+    $(groupManagerContainer).fancytree({
+        icons: false,
+        activate: function (event, data) {
+            //Close the dropdown
+            if ($.inArray(data.node.title, self.defaults.selectedGroups) === -1 && !data.node.selected) {
+                self._addPills(data.node);
+            }
+        },
+
+        beforeSelect: function (event, data) {
+            var s;
+        },
+
+        expand: function (event, data) {
+            event.stopPropagation();
+            return false;
+        },
+        debugLevel: 0
+    });
     var d = new Date();
     $(".btnExport").click(function () {
         $(".reportDataTable").table2excel({
@@ -7,6 +27,17 @@ $(document).ready(function () {
             name: "AttendanceReport_" + d
         });
     });
+    $(".lookUp .student.expandCollapse").click(function () {
+        $(".lookUp .staff.panel-collapse").collapse('hide');
+        $(".lookUp .student.panel-collapse").collapse('toggle');
+        //$(".expandCollapse").toggleClass('collapsed');
+    });
+    $(".lookUp .staff.expandCollapse").click(function () {
+        $(".lookUp .student.panel-collapse").collapse('hide');
+        $(".lookUp .staff.panel-collapse").collapse('toggle');
+        //$(".expandCollapse").toggleClass('collapsed');
+    });
+
 
     //$(".form-control #DOBDatePicker").datepicker({
     //    changeMonth: true,//this option for allowing user to select month

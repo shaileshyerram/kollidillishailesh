@@ -252,13 +252,17 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Img\arrow.png" />
     <Content Include="Content\Img\attendance.png" />
     <Content Include="Content\Img\darkdenim3.png" />
     <Content Include="Content\Img\dark_leather.png" />
+    <Content Include="Content\Img\group-manager-sprite.png" />
     <Content Include="Content\Img\logo.png" />
     <Content Include="Content\Img\logo2.png" />
     <Content Include="Content\Img\logo3.png" />
+    <Content Include="Content\Img\logo4.png" />
+    <Content Include="Content\Img\logo5.png" />
     <Content Include="Content\Img\sms1.jpg" />
     <Content Include="Content\Img\sms2.jpg" />
     <Content Include="Content\Img\Students.png" />
@@ -266,6 +270,7 @@
     <Content Include="Content\Styles\bootstrap.min.css" />
     <Content Include="Content\Styles\CommonStyles.css" />
     <Content Include="Content\Styles\datepicker.css" />
+    <Content Include="Content\Styles\fancytree.css" />
     <Content Include="Content\Styles\normalize.css" />
     <Content Include="Content\Styles\PagedList.css" />
     <Content Include="Content\Styles\SMSNotification.css" />
@@ -294,6 +299,10 @@
       <DependentUpon>AttendeeModel.edmx</DependentUpon>
     </Content>
     <Content Include="Mvc.sitemap" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff2" />
     <None Include="MvcSiteMapSchema.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -312,6 +321,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.custom.js" />
+    <Content Include="Scripts\jquery.fancytree.js" />
     <Content Include="Scripts\jquery.table2excel.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />

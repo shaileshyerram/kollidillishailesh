@@ -1,10 +1,12 @@
 ﻿
 body {
-    background-color: #F5FBFB !important;
+    /* background-color: #F5FBFB !important; */
+    font-family: "Montserrat-Bold","Helvetica Neue", Helvetica, Arial, sans-serif !important;
     display: block !important;
+    color:#7e8083 !important;
 }
-.navbar { position: relative !important;}
-.navbar-brand {background: url('../img/logo3.png') no-repeat 0 0 #428bca;width: 175px;}
+.navbar { position: relative !important; margin-top:20px;min-height:40px !important;}
+.navbar-brand {background: url('../img/logo5.png') no-repeat;width: 165px;}
 h3 { font-size: 25px!important;padding: 0 !important;line-height: 30px;margin: 0!important;}
 .report .searchCriteria{margin-left: auto;margin-right: auto;}
 #submit{ margin-right: 18px;}
@@ -99,6 +101,22 @@ table >tbody >tr { height: 100% !important;}
     font-weight: normal !important;
 }
 
+.glyphicon {
+    color: #C7C1C1 !important;
+}
+
+.lookUp a:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e114";
+    color: #C7C1C1 !important;
+}
+.lookUp a.collapsed:after {
+    font-family:'Glyphicons Halflings';
+    content:"\e080";
+    color: #C7C1C1 !important;
+}
+
+/* E0D9D9*/
 /*.form-control{ height: 100% !important;}*/
 #loginForm .form-control {
     width: 100% !important;
@@ -126,9 +144,30 @@ footer{ text-align: center;}
     background-color: #EAE9E9;
 }
 
-.navbar-inverse { background-color: #428bca !important; }
+.navbar-inverse { background-color: #ffffff !important; border:none !important;}
+.navbar-header {padding-right: 30px;}
 
-.navbar-inverse .navbar-nav > li > a { color: #ffffff !important;}
+
+.navbar-inverse .navbar-nav > li > a { color: #9E9A9A !important;  text-transform: uppercase;
+    display: inline-block; margin: 10px 15px 0 5px !important; padding: 0 !important;font-weight:bold;}
+/*  37A736*/
+.dropdown-menu > li > a {
+    color: #9E9A9A !important;
+}
+/*.navbar-inverse .navbar-nav > li > a:hover { background-color: #60a628 !important; color: #ffffff !important;} */
+.navbar-inverse .navbar-nav > li > a:hover { border-bottom: solid 3px #60a628;}
+.navbar-inverse .navbar-nav > li > a.dropdown-toggle:hover {border-bottom: none !important;}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #9E9A9A !important;
+    background-color: transparent !important;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #60a628 !important;
+  text-decoration: none;
+  background-color: transparent !important;
+}
 
 .manageTable >tbody >tr >th.action, .manageTable >tbody >tr >th.section, .manageTable >tbody >tr >th.gender,
 .manageTable >tbody >tr >td.action, .manageTable >tbody >tr >td.section, .manageTable >tbody >tr >td.gender {
@@ -153,9 +192,12 @@ footer{ text-align: center;}
     margin: 0 0 15px 0;
 }
 
+.shadowBox {
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
+}
 .login-box {
     background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.15);
     width: 100%;
     margin: 0 auto;
     min-height: 530px;
@@ -185,3 +227,9 @@ div.scrollWrapper{
   overflow:scroll;
 }
 tbody { height:200px !important;  overflow:scroll !important;}
+
+.expandCollapse {
+    text-decoration: underline;
+}
+
+.leftPanel { width: 23%;}
