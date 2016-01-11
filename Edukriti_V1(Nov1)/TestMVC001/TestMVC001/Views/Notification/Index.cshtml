@@ -1,97 +1,65 @@
-﻿@inherits System.Web.Mvc.WebViewPage<dynamic>
+﻿@model TestMVC001.Models.GroupsModel
+@using System.Configuration
 @{
     ViewBag.Title = "Notification";
+    var groups = @Html.Raw(Json.Encode(@Model.Groups));
 }
 @*<link href="@Url.Content("~/Content/Styles/SMSNotification.css")" rel="stylesheet" type="text/css"/>*@
+<script type="text/javascript" src="@Url.Content("~/Scripts/Attendance/Notification.js")"></script>
+<script type="text/javascript">
+    $(document).ready("Notification.renderJsonTree();");
+</script>
+    <br />
+<br />
+<input type="hidden" id="groups" name="groups" value=@groups />
+    <div>
+        <div class="leftPanel tree pull-left shadowBox">
+            <input type="hidden" id="gettreeurl" name="gettreeurl" value="@Url.Action("gettree", "Notification")" />
+            <div class="treeContainer">
+                
+                <ul class="gridData" style="display:none;">
 
-<br />
-<br />
-<div>
-    <div class="leftPanel tree pull-left shadowBox">
-        <div class="treeContainer">
-            <ul class="gridData" style="display:none;">
-                <li id="1">
-                    All Students
-                    <ul>
-                        <li id="2">LKG</li>
-                        <li id="3">UKG</li>
-                        <li id="4">UKG</li>
-                        <li id="5">
-                            Class I
-                            <ul>
-                                <li id="6">Section A</li>
-                                <li id="7">Section B</li>
-                            </ul>
-                        </li>
-                        <li id="8">
-                            Class II
-                            <ul>
-                                <li id="9">Section A</li>
-                                <li id="10">Section B</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li id="11">All teaching staff</li>
-                <li id="12">All non teaching staff</li>
-            </ul>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="rightPanel notificationContent pull-right shadowBox">
+        <div class="rightPanel notificationContent pull-right shadowBox">
 
-        <div class="notificationResponse"></div>
-        <br />
-        <form id="notificationForm" class="form-horizontal" role="form">
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="phoneNumber">Mobile number</label>
-                <div class="col-md-10">
-                    <textarea class="form-control" rows="2" cols="75" name="phoneNumber" placeholder="Enter phone numbers separated by comma"></textarea>
-                </div>
-            </div>
-            <div class="form-group lookUp">
-                <a class="student expandCollapse collapsed" data-toggle="collapse">
-                    Student Look Up
-                </a>
-                <div class="student panel-collapse collapse">
-                    <label class="col-md-2 control-label" for="firstName">First Name</label>
-                    <div class="col-md-4">
-                        <input class="form-control" id="Name" name="firstName" type="text" value="">
+            <div class="notificationResponse"></div>
+            <form id="notificationForm" class="form-horizontal" role="form">
+                <div class="form-group group-pills">
+                    <div>
+                        <label class="control-label text-left group-action hide">Selected groups:</label>
                     </div>
-                    <label class="col-md-2 control-label" for="lastName">Last Name</label>
-                    <div class="col-md-4">
-                        <input class="form-control" id="Name" name="lastName" type="text" value="">
+                    <div class="plist col-md-9"></div>
+                </div>
+                <div class="form-group">
+                    <div class="control-group email-groups-container m-b-none">
+                        <button type="button" id="btnDisplayPhoneNumbers" class="btn btn-dark" data-url="@Url.Action("getphonenumbers", "Notification")">Get phone numbers</button>
+                        <span class="form-note">Maximum of 100 phone numbers separated by semicolons</span>
+                    </div>
+                    <div class="col-md-12">
+                        <textarea id="phoneNumbers" class="form-control" rows="3" cols="75" name="phoneNumber" placeholder="Click on get phone numbers"></textarea>
                     </div>
                 </div>
-            </div>
-            <div class="form-group lookUp">
-                <a class="staff expandCollapse collapsed" data-toggle="collapse">
-                    Staff Look Up
-                </a>
-                <div class="staff panel-collapse collapse">
-                    <label class="col-md-2 control-label" for="firstName">First Name</label>
-                    <div class="col-md-4">
-                        <input class="form-control" id="Name" name="firstName" type="text" value="">
-                    </div>
-                    <label class="col-md-2 control-label" for="lastName">Last Name</label>
-                    <div class="col-md-4">
-                        <input class="form-control" id="Name" name="lastName" type="text" value="">
+                <div class="form-group">
+                    <label class="col-md-6 control-label text-left" for="phoneNumber">Additional mobile numbers</label>
+                    <div class="col-md-12">
+                        <textarea id="additionalPhoneNumbers" class="form-control" rows="2" cols="75" name="phoneNumber" placeholder="Enter phone numbers separated by comma"></textarea>
                     </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="message">Message</label>
-                <div class="col-md-10">
-                    <textarea class="form-control" rows="5" cols="75" name="message"></textarea>
+                <div class="form-group">
+                    <label class="col-md-6 control-label text-left" for="message">Message</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" rows="5" cols="75" name="message"></textarea>
+                    </div>
                 </div>
-            </div>
-            <br />
-            <div class="form-group">
-                <div class="col-md-offset-5 col-md-10">
-                    <input type="submit" value="Submit" id="submit" class="btn btn-success" data-url="@Url.Action("SendNotification", "Notification")">
-                    <input type="reset" value="Reset" id="reset" class="btn btn-success">
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-5 col-md-12">
+                        <input type="submit" value="Submit" id="submit" class="btn btn-success" data-url="@Url.Action("SendNotification", "Notification")">
+                        <input type="reset" value="Reset" id="reset" class="btn btn-success">
+                    </div>
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 </div>

@@ -1,25 +1,5 @@
 ﻿
 $(document).ready(function () {
-    var groupManagerContainer = $(".treeContainer");
-    $(groupManagerContainer).fancytree({
-        icons: false,
-        activate: function (event, data) {
-            //Close the dropdown
-            if ($.inArray(data.node.title, self.defaults.selectedGroups) === -1 && !data.node.selected) {
-                self._addPills(data.node);
-            }
-        },
-
-        beforeSelect: function (event, data) {
-            var s;
-        },
-
-        expand: function (event, data) {
-            event.stopPropagation();
-            return false;
-        },
-        debugLevel: 0
-    });
     var d = new Date();
     $(".btnExport").click(function () {
         $(".reportDataTable").table2excel({
@@ -144,7 +124,7 @@ $(document).ready(function () {
     $(".notificationContent #submit").on('click', function () {
         var reportRequestModel =
             {
-                tophonenumber: $("textarea[name='phoneNumber']").val(),
+                tophonenumber: $("textarea[id='phoneNumbers']").val() + ';' + $("textarea[id='additionalPhoneNumbers']").val(),
                 message: $("textarea[name='message']").val()
             };
         //Article.progress().showLoading();

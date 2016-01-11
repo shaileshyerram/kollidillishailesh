@@ -237,6 +237,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AttendeeModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\GroupsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NotificationModel.cs" />
@@ -289,6 +290,7 @@
     </Content>
     <Content Include="Scripts\ai.0.15.0-build46802.js" />
     <Content Include="Scripts\ai.0.15.0-build46802.min.js" />
+    <Content Include="Scripts\Attendance\Notification.js" />
     <Content Include="Scripts\Attendance\Report.js" />
     <Content Include="Scripts\bootstrap.js" />
     <EntityDeploy Include="Models\AttendeeModel.edmx">
