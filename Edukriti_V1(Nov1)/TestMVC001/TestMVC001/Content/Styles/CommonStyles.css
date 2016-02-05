@@ -34,6 +34,7 @@ table >tbody >tr { height: 100% !important;}
 .notificationTable tr td { vertical-align:top;padding-top:25px; }
 .ntfnLabel { display: inline-block;font-weight: bold;font-size: 14px;text-align: right;}
 .ntfnText { display: inline-block;}
+.notificationResponse { padding: 20px 20px 0 20px; }
 
 .boxes {
     height:365px;
